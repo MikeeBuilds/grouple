@@ -57,5 +57,5 @@ export const usePayments = (
         queryFn: () => onGetStripeClientSecret(),
     })
 
-    const { mutateAsync: createGroup, isPending } 
+    const { mutateAsync: createGroup, isPending }
 }

@@ -1,3 +1,3 @@
 "use server"
 
-export const onGetStripeClientSecret = async ()
+export const onGetStripeClientSecret = async()

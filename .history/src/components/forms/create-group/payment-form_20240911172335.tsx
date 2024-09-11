@@ -16,7 +16,7 @@ const PaymentForm = ({ affiliate, userId, stripeId }: Props) => {
         isCategory,
         creatingIntent,
     } = usePayments(userId, affiliate)
-    return 
+    return
 }
 
 export default PaymentForm

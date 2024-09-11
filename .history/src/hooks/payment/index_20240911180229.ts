@@ -60,6 +60,6 @@ export const usePayments = (
     const { mutateAsync: createGroup, isPending } = useMutation({
         mutationFn: async (data: z.infer<typeof CreateGroupSchema>) => {
             if (!stripe || !elements) return
-        }
+        },
     })
 }

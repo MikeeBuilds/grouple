@@ -58,6 +58,6 @@ export const usePayments = (
     })
 
     const { mutateAsync: createGroup, isPending } = useMutation({
-        mutationFn: async (data)
+        mutationFn: async(data),
     })
 }

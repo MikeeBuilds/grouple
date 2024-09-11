@@ -25,7 +25,6 @@ export const usePayments = (
 
     const stripe = useStripe()
     const elements = useElements()
-    
 
     const {
         reset,
@@ -37,7 +36,7 @@ export const usePayments = (
         resolver: zodResolver(CreateGroupSchema),
         defaultValues: {
             category: "",
-        }
+        },
     })
 
     useEffect(() => {

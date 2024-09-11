@@ -6,7 +6,5 @@ type StripeElementsProps = {
 }
 
 export const StripeElements = ({ children }: StripeElementsProps) => {
-
-    
     return <div>{children}</div>
 }

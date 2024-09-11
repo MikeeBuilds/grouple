@@ -1,7 +1,5 @@
 "use server"
 
-
-
 export const onGetStripeClientSecret = async () => {
     try {
         const paymentIntent = await stripe.paymentIntents.create({
@@ -16,6 +14,6 @@ export const onGetStripeClientSecret = async () => {
             return paymentIntent.client_secret
         }
     } catch (error) {
-        return { status: 400, message: "Failed to load form "}
+        return { status: 400, message: "Failed to load form " }
     }
 }

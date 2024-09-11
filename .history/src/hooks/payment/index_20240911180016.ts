@@ -57,5 +57,5 @@ export const usePayments = (
         queryFn: () => onGetStripeClientSecret(),
     })
 
-    const { mutateAsync}
+    const { mutateAsync }
 }

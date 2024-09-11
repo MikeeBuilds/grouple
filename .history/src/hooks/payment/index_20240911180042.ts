@@ -57,7 +57,5 @@ export const usePayments = (
         queryFn: () => onGetStripeClientSecret(),
     })
 
-    const { mutateAsync: createGroup, isPending } = useMutation({
-        
-    })
+    const { mutateAsync: createGroup, isPending } = useMutation({})
 }

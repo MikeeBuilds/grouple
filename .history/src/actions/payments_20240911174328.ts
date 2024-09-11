@@ -14,6 +14,6 @@ export const onGetStripeClientSecret = async () => {
             return paymentIntent.client_secret
         }
     } catch (error) {
-        return { status: 400}
+        return { status: 400 }
     }
 }

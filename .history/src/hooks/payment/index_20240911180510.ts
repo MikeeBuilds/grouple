@@ -65,12 +65,14 @@ export const usePayments = (
 
             const { eror, paymentIntent } = await stripe.confirmCardPayment(
                 Intent.secret!,
-            {
-                payment_method: {
-                    card: elements.getElement(CardElement,) as StripeCardEleme,
+                {
+                    payment_method: {
+                        card: elements.getElement(
+                            CardElement,
+                        ) as StripeCardEleme,
+                    },
                 },
-            }
             )
-        }
+        },
     })
 }

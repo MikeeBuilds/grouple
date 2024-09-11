@@ -21,8 +21,5 @@ export const usePayments = (
     const stripe = useStripe()
     const elements = useElements()
 
-    const {
-        reset,
-        handle
-    }
+    const { reset, handle }
 }

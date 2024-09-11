@@ -8,9 +8,7 @@ type Props = {
 
 //WIP connect use payments hook
 const PaymentForm = ({ affiliate, userId, stripeId }: Props) => {
-    const {
-        onCreateGroup
-    }
+    const { onCreateGroup }
 }
 
 export default PaymentForm

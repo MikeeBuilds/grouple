@@ -39,7 +39,7 @@ export const usePayments = (
         resolver: zodResolver(CreateGroupSchema),
         defaultValues: {
             category: "",
-        }
+        },
     })
 
     useEffect(() => {
@@ -55,5 +55,4 @@ export const usePayments = (
         queryKey: ["payment-intent"],
         queryFn: () => onGetStripeClientSecret(),
     })
-
 }

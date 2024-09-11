@@ -1,3 +1,3 @@
 export const useStripeElements = () => {
-    const StripePromise 
+    const StripePromise
 }

@@ -63,9 +63,7 @@ export const usePayments = (
                 return null
             }
 
-            const { eror, paymentIntent } = await stripe.confirmCardPayment(
-                
-            )
-        }
+            const { eror, paymentIntent } = await stripe.confirmCardPayment()
+        },
     })
 }

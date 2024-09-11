@@ -62,7 +62,6 @@ export const usePayments = (
             if (!stripe || !elements || !Intent) {
                 return null
             }
-            
-        }
+        },
     })
 }

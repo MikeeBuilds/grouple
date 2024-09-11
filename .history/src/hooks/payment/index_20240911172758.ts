@@ -21,7 +21,5 @@ export const usePayments = (
     const stripe = useStripe()
     const elements = useElements()
 
-    const {
-        
-    }
+    const {}
 }

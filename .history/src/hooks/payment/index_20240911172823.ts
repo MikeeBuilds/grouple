@@ -26,6 +26,5 @@ export const usePayments = (
         handleSubmit,
         formState: { errors },
         register,
-        
     }
 }

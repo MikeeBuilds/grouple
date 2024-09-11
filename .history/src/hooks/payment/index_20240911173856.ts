@@ -39,7 +39,7 @@ export const usePayments = (
         resolver: zodResolver(CreateGroupSchema),
         defaultValues: {
             category: "",
-        }
+        },
     })
 
     useEffect(() => {
@@ -51,8 +51,5 @@ export const usePayments = (
         return () => category.unsubscribe()
     }, [watch])
 
-    const { data: Intent, isPending: creatingIntent } = useQuery({
-        
-    })
-
+    const { data: Intent, isPending: creatingIntent } = useQuery({})
 }

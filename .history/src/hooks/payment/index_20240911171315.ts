@@ -1,3 +1,1 @@
-export const useStripeElements = () => {
-    
-}
+export const useStripeElements = () => {}

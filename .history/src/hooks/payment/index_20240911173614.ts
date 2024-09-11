@@ -36,12 +36,12 @@ export const usePayments = (
         resolver: zodResolver(CreateGroupSchema),
         defaultValues: {
             category: "",
-        }
+        },
     })
 
     useEffect(() => {
         const category = watch(({ category }) => {
-            if(category) {
+            if (category) {
                 setIsCategory(category)
             }
         })

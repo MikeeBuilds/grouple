@@ -30,6 +30,5 @@ export const usePayments = (
         watch,
     } = useForm<z.infer<typeof createGroupSchema>>({
         resolver: zodResolver(createGroupSchema),
-        
     })
 }

@@ -32,6 +32,6 @@ export const usePayments = (
         resolver: zodResolver(createGroupSchema),
         defaultValues: {
             category: isCategory,
-        }
+        },
     })
 }

@@ -63,7 +63,7 @@ export const usePayments = (
                 return null
             }
 
-            const { eror, paymentIntent}
-        }
+            const { eror, paymentIntent }
+        },
     })
 }

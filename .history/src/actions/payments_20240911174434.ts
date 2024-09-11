@@ -1,8 +1,6 @@
 "use server"
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
-
-})
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {})
 
 export const onGetStripeClientSecret = async () => {
     try {
@@ -18,6 +16,6 @@ export const onGetStripeClientSecret = async () => {
             return paymentIntent.client_secret
         }
     } catch (error) {
-        return { status: 400, message: "Failed to load form "}
+        return { status: 400, message: "Failed to load form " }
     }
 }

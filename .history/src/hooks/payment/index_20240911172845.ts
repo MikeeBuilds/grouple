@@ -28,5 +28,5 @@ export const usePayments = (
         formState: { errors },
         register,
         watch,
-    } = useForm<z.infer
+    } = useForm < z.infer
 }

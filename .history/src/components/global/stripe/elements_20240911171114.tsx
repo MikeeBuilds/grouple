@@ -1,6 +1,5 @@
 "use client"
 
-
 type StripeElementsProps = {
     children: React.ReactNode
 }
