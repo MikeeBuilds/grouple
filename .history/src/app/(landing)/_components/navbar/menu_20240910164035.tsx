@@ -23,7 +23,8 @@ const Menu = ({ orientation }: MenuProps) => {
             )
         case "moblile":
             return <div></div>
-            default: return <></>
+        default:
+            return <></>
     }
 }
 

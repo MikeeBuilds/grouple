@@ -12,7 +12,7 @@ const Menu = ({ orientation }: MenuProps) => {
     const { section, onSetSection } = useNavigation()
     switch (orientation) {
         case "desktop":
-            return 
+            return
     }
 }
 

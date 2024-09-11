@@ -17,6 +17,6 @@ export const LANDING_PAGE_MENU: MenuProps[] = [
     },
     {
         id: 1,
-        label: "E"
-    }
+        label: "E",
+    },
 ]

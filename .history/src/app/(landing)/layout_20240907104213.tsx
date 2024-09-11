@@ -1,6 +1,6 @@
 type Props = {}
 
-const LandingPageLayout = ({ }) => {
+const LandingPageLayout = ({}) => {
     return <div>LandingPageLayout</div>
 }
 

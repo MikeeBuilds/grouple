@@ -11,11 +11,7 @@ const LandingPageNavbar = (props: Props) => {
             <Menu orientation="desktop" />
             <div className="flex gap-2">
                 <Link href="/sign-in">
-                    <Button
-                      variant="outline"
-                    >
-                        Login
-                    </Button>
+                    <Button variant="outline">Login</Button>
                 </Link>
             </div>
         </div>

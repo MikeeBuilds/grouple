@@ -8,5 +8,4 @@ export const LANDING_PAGE_MENU: MenuProps[] = [
         path: "/",
         section: true,
     },
-    
 ]

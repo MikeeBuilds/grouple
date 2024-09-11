@@ -16,6 +16,6 @@ export const LANDING_PAGE_MENU: MenuProps[] = [
         section: true,
     },
     {
-        id
-    }
+        id,
+    },
 ]

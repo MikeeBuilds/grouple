@@ -1,4 +1,4 @@
-'use server'
+"use server"
 
 import { client } from "@/lib/prisma"
 import { currentUser } from "@clerk/nextjs/server"
@@ -10,12 +10,9 @@ export const onAuthenticatedUser = async () => {
 
         const user = await client.user.findUnique({
             where: {
-                clerkId: clerk.id
+                clerkId: clerk.id,
             },
-            select
+            select,
         })
-        
-    } catch (error) {
-        
-    }
+    } catch (error) {}
 }

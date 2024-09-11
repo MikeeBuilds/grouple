@@ -23,7 +23,6 @@ export const onAuthenticatedUser = async () => {
                 status: 200,
                 id: user.id,
                 image: clerk.imageUrl,
-                
             }
     } catch (error) {}
 }

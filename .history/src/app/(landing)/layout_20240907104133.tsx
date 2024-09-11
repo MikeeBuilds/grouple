@@ -1,5 +1,3 @@
 type Props = {}
 
-const LandingPageLayout = (props: Props) => {
-    
-}
+const LandingPageLayout = (props: Props) => {}

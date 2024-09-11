@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 
 type GradientTextProps = {
     element?: "H1" | "H2"
@@ -6,10 +6,8 @@ type GradientTextProps = {
     className?: string
 }
 
-const GradientText = ({ children, }) => {
-  return (
-    <div>GradientText</div>
-  )
+const GradientText = ({ children }) => {
+    return <div>GradientText</div>
 }
 
 export default GradientText

@@ -1,4 +1,4 @@
-'use server'
+"use server"
 
 import { currentUser } from "@clerk/nextjs/server"
 
@@ -8,8 +8,5 @@ export const onAuthenticatedUser = async () => {
         if (!clerk) return { status: 404 }
 
         const user
-        
-    } catch (error) {
-        
-    }
+    } catch (error) {}
 }

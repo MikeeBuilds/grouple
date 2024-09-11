@@ -5,5 +5,4 @@ export const useNavigation = () => {
     const pathName = usePathname()
     const [section, setSection] = useState<string>(pathName)
     const onSetSection = (page: string) => setSection(page)
-    
 }

@@ -5,4 +5,4 @@ export const GROUPLE_CONSTANTS: GroupleConstantsProps = {
     groupList: GROUP_LIST,
     createGroupPlaceholder: CREATE_GROUP_PLACEHOLDER,
     groupPageMenu: GROUP_PAGE_MENU,
-  }
+}

@@ -22,7 +22,6 @@ export const onAuthenticatedUser = async () => {
             return {
                 status: 200,
                 id: user.id,
-                
             }
     } catch (error) {}
 }

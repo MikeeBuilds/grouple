@@ -1,5 +1,3 @@
-'use server'
+"use server"
 
-export const onAuthenticatedUser = async () => {
-    
-}
+export const onAuthenticatedUser = async () => {}

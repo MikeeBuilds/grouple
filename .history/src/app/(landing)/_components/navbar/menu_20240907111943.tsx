@@ -15,10 +15,7 @@ const Menu = ({ orientation }: MenuProps) => {
             return <Card className="bgthe"></Card>
         case "moblile":
             return <div></div>
-            desfault:
-            return <></>  
-
-
+            desfault: return <></>
     }
 }
 

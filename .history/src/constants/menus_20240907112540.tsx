@@ -1,3 +1,1 @@
-export const LANDING_PAGE_MENU: MenuProps[] = [
-    
-]
+export const LANDING_PAGE_MENU: MenuProps[] = []

@@ -14,5 +14,5 @@ export const LANDING_PAGE_MENU: MenuProps[] = [
         icon: <CreditCard />,
         path: "/about",
         section: true,
-    }
+    },
 ]

@@ -12,10 +12,10 @@ const LandingPageNavbar = (props: Props) => {
             <div className="flex gap-2">
                 <Link href="/sign-in">
                     <Button
-                      variant="outline"
-                      className="bg-themeBlack rounded-2xl flex gap-2 border-themeGray hover:bg-themeGray"
+                        variant="outline"
+                        className="bg-themeBlack rounded-2xl flex gap-2 border-themeGray hover:bg-themeGray"
                     >
-                        <Logout/>
+                        <Logout />
                         Login
                     </Button>
                 </Link>

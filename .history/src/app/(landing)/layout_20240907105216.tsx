@@ -1,10 +1,12 @@
 type Props = {}
 
-const LandingPageLayout = ({ children }: {children: React.ReactNode}) => {
-    return <div className="flex flex-col container relative">
-        <LandingPageLayout></LandingPageLayout>
-        {children}
+const LandingPageLayout = ({ children }: { children: React.ReactNode }) => {
+    return (
+        <div className="flex flex-col container relative">
+            <LandingPageLayout></LandingPageLayout>
+            {children}
         </div>
+    )
 }
 
 export default LandingPageLayout

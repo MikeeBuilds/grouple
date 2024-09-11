@@ -1,4 +1,3 @@
-
 export const LANDING_PAGE_MENU: MenuProps[] = [
     {
         id: 0,
@@ -19,5 +18,5 @@ export const LANDING_PAGE_MENU: MenuProps[] = [
         label: "Explore",
         icon: <Explore />,
         path: "/explore",
-    }
+    },
 ]

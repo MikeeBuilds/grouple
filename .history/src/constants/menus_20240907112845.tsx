@@ -20,5 +20,5 @@ export const LANDING_PAGE_MENU: MenuProps[] = [
         label: "Explore",
         icon: <Explore />,
         path: "/explore",
-    }
+    },
 ]

@@ -12,13 +12,12 @@ const Menu = ({ orientation }: MenuProps) => {
     const { section, onSetSection } = useNavigation()
     switch (orientation) {
         case "desktop":
-            return <Card className="bg-themeGray border-themeGray bg-clip-padding backdrop--blur__safari backdrop-filter backdrop-blur-2xl bg-opacity-60 p-1"></Card>
+            return (
+                <Card className="bg-themeGray border-themeGray bg-clip-padding backdrop--blur__safari backdrop-filter backdrop-blur-2xl bg-opacity-60 p-1"></Card>
+            )
         case "moblile":
             return <div></div>
-            desfault:
-            return <></>  
-
-
+            desfault: return <></>
     }
 }
 

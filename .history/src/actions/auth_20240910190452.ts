@@ -25,8 +25,6 @@ export const onAuthenticatedUser = async () => {
                 image: clerk.imageUrl,
                 username: `${user.firstname} ${user.lastname}`,
             }
-            return {
-                
-            }
+        return {}
     } catch (error) {}
 }

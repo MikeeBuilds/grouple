@@ -14,7 +14,7 @@ const Menu = ({ orientation }: MenuProps) => {
         case "desktop":
             return <div></div>
 
-            case "mobile":
+        case "mobile":
             return <div></div>
     }
 }

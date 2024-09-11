@@ -12,8 +12,8 @@ const LandingPageNavbar = (props: Props) => {
             <div className="flex gap-2">
                 <Link href="/sign-in">
                     <Button
-                      variant="outline"
-                      className="bg-themeBlack rounded3"
+                        variant="outline"
+                        className="bg-themeBlack rounded3"
                     >
                         Login
                     </Button>
