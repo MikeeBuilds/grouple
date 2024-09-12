@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 
 type Props = {
     groupId: string
@@ -12,23 +12,21 @@ export interface IChannels {
     icon: string
     createdAt: Date
     groupId: string | null
-  }
-  
-  export interface IGroups {
+}
+
+export interface IGroups {
     status: number
     groups:
-      | {
-          icon: string | null
-          id: string
-          name: string
-        }[]
-      | undefined
-  }
+        | {
+              icon: string | null
+              id: string
+              name: string
+          }[]
+        | undefined
+}
 
 const SideBar = (props: Props) => {
-  return (
-    <div>SideBar</div>
-  )
+    return <div>SideBar</div>
 }
 
 export default SideBar

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 
 type Props = {
     children: React.ReactNode
@@ -7,11 +7,9 @@ type Props = {
     }
 }
 
-const GroupLayout = async ({children, params}: Props) => {
-    const query = new Q
-  return (
-    <div>GroupLayout</div>
-  )
+const GroupLayout = async ({ children, params }: Props) => {
+    const query = new Q()
+    return <div>GroupLayout</div>
 }
 
 export default GroupLayout

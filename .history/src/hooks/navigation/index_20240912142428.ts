@@ -11,7 +11,4 @@ export const useNavigation = () => {
     }
 }
 
-
-export const useSideBar = (groupid: string) => {
-    
-}
+export const useSideBar = (groupid: string) => {}

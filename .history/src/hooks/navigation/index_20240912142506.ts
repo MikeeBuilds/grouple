@@ -12,9 +12,6 @@ export const useNavigation = () => {
     }
 }
 
-
 export const useSideBar = (groupid: string) => {
-    const { data: groups } = useQuery({
-        
-    })
+    const { data: groups } = useQuery({})
 }

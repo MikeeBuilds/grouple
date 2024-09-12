@@ -1,3 +1,3 @@
 "use client"
 
-export const UseGroupChatOnline = (userid)
+export const UseGroupChatOnline = userid

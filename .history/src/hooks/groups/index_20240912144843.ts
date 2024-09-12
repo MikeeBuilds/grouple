@@ -1,5 +1,3 @@
 "use client"
 
-export const UseGroupChatOnline = (userid: string) => {
-    
-}
+export const UseGroupChatOnline = (userid: string) => {}

@@ -1,5 +1,5 @@
-import { useSideBar } from '@/hooks/navigation'
-import React from 'react'
+import { useSideBar } from "@/hooks/navigation"
+import React from "react"
 
 type Props = {
     groupid: string
@@ -10,23 +10,23 @@ type Props = {
 export interface IGroupInfo {
     status: number
     group:
-      | {
-          id: string
-          name: string
-          category: string
-          thumbnail: string | null
-          description: string | null
-          gallery: string[]
-          jsonDescription: string | null
-          htmlDescription: string | null
-          privacy: boolean
-          active: boolean
-          createdAt: Date
-          userId: string
-          icon: string
-        }
-      | undefined
-  }
+        | {
+              id: string
+              name: string
+              category: string
+              thumbnail: string | null
+              description: string | null
+              gallery: string[]
+              jsonDescription: string | null
+              htmlDescription: string | null
+              privacy: boolean
+              active: boolean
+              createdAt: Date
+              userId: string
+              icon: string
+          }
+        | undefined
+}
 
 export interface IChannels {
     id: string
@@ -34,27 +34,26 @@ export interface IChannels {
     icon: string
     createdAt: Date
     groupId: string | null
-  }
-  
-  export interface IGroups {
+}
+
+export interface IGroups {
     status: number
     groups:
-      | {
-          icon: string | null
-          id: string
-          name: string
-        }[]
-      | undefined
-  }
+        | {
+              icon: string | null
+              id: string
+              name: string
+          }[]
+        | undefined
+}
 
 const SideBar = ({ userid, groupid, mobile }: Props) => {
-    const { groupInfo, groups, mutate, variables, isPending, channels } = useSideBar(groupid) 
+    const { groupInfo, groups, mutate, variables, isPending, channels } =
+        useSideBar(groupid)
 
     useGroup
 
-  return (
-    <div>SideBar</div>
-  )
+    return <div>SideBar</div>
 }
 
 export default SideBar

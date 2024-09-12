@@ -66,7 +66,7 @@ const SideBar = ({ userid, groupid, mobile }: Props) => {
                     : "w-full flex",
             )}
         >
-            {groups.groups && groups.groups.length }
+            {groups.groups && groups.groups.length}
         </div>
     )
 }

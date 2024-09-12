@@ -11,5 +11,4 @@ export const useNavigation = () => {
     }
 }
 
-
-export const useSideBar = (grou)
+export const useSideBar = grou

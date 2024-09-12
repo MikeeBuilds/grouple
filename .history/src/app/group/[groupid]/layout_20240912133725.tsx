@@ -1,16 +1,12 @@
-import React from 'react'
+import React from "react"
 
 type Props = {
     children: React.ReactNode
-    params: {
-        
-    }
+    params: {}
 }
 
 const GroupLayout = (props: Props) => {
-  return (
-    <div>GroupLayout</div>
-  )
+    return <div>GroupLayout</div>
 }
 
 export default GroupLayout

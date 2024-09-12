@@ -11,5 +11,4 @@ export const useNavigation = () => {
     }
 }
 
-
-export const useSideBar = (gr)
+export const useSideBar = gr

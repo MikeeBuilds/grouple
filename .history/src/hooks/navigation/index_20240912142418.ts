@@ -11,5 +11,4 @@ export const useNavigation = () => {
     }
 }
 
-
-export const useSideBar = (groupid)
+export const useSideBar = groupid

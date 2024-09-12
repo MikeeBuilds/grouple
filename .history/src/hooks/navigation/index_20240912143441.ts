@@ -14,10 +14,9 @@ export const useNavigation = () => {
     }
 }
 
-
 export const useSideBar = (groupid: string) => {
     const { data: groups } = useQuery({
-        queryKey: ["user-groups"], 
+        queryKey: ["user-groups"],
     }) as { data: IGroups }
 
     const { data: groupInfo } = useQuery({
@@ -27,11 +26,11 @@ export const useSideBar = (groupid: string) => {
     const { data: channels } = useQuery({
         queryKey: ["group-channels"],
         queryFn: () => onGetGroupChannels(groupid),
-    }) 
+    })
 
     const client = useQueryClient()
 
     //We use usemutation to optimistically add a channel
     // once the mutation is settled or complete we invalidate the group channel query and trigger a refetch
-    // 
+    //
 }

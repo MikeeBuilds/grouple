@@ -60,10 +60,10 @@ export const useSideBar = (groupid: string) => {
             description: "Channel created successfully",
         })
 
-        if (isError)
-            toast("Error!", {
-                description: "Channel creation failed",
-            })
+    if (isError)
+        toast("Error!", {
+            description: "Channel creation failed",
+        })
 
     return {
         groupInfo,

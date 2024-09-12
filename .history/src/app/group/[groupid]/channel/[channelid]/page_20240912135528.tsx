@@ -1,6 +1,6 @@
-import { currentUser } from '@clerk/nextjs/server'
-import { QueryClient } from '@tanstack/react-query'
-import React from 'react'
+import { currentUser } from "@clerk/nextjs/server"
+import { QueryClient } from "@tanstack/react-query"
+import React from "react"
 
 type Props = {}
 
@@ -9,10 +9,7 @@ const GroupChannelPage = async (props: Props) => {
     const user = await currentUser()
     const authUser = await onAuthenticatedUser()
 
-
-  return (
-    <div>GroupChannelPage</div>
-  )
+    return <div>GroupChannelPage</div>
 }
 
 export default GroupChannelPage

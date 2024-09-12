@@ -69,40 +69,42 @@ const SideBar = ({ userid, groupid, mobile }: Props) => {
         >
             {groups.groups && groups.groups.length > 0 && (
                 <DropDown
-                title="Groups"
-                trigger={
-                  <div className="w-full flex items-center justify-between text-themeTextGray md:border-[1px] border-themeGray p-3 rounded-xl">
-                    <div className="flex gap-x-3 items-center">
-                      <img
-                        src={`https://ucarecdn.com/${groupInfo.group?.icon as string}/`}
-                        alt="icon"
-                        className="w-10 rounded-lg"
-                      />
-                      <p className="text-sm">{groupInfo.group?.name}</p>
-                    </div>
-                    <span className="">
-                      <CarotSort />
-                    </span>
-                  </div>
-                }
-              >
-                {groups &&
-                  groups.groups.length > 0 &&
-                  groups.groups.map((item) => (
-                    <Link
-                      key={item.id}
-                      href={`/group/${item.id}/channel/${channels?.channels?.[0].id!}`}
-                    >
-                      <Button
-                        variant="ghost"
-                        className="flex gap-2 w-full justify-start hover:bg-themeGray items-center"
-                      >
-                        <Group />
-                        {item.name}
-                      </Button>
-                    </Link>
-                  ))}
-              </DropDown>
+                    title="Groups"
+                    trigger={
+                        <div className="w-full flex items-center justify-between text-themeTextGray md:border-[1px] border-themeGray p-3 rounded-xl">
+                            <div className="flex gap-x-3 items-center">
+                                <img
+                                    src={`https://ucarecdn.com/${groupInfo.group?.icon as string}/`}
+                                    alt="icon"
+                                    className="w-10 rounded-lg"
+                                />
+                                <p className="text-sm">
+                                    {groupInfo.group?.name}
+                                </p>
+                            </div>
+                            <span className="">
+                                <CarotSort />
+                            </span>
+                        </div>
+                    }
+                >
+                    {groups &&
+                        groups.groups.length > 0 &&
+                        groups.groups.map((item) => (
+                            <Link
+                                key={item.id}
+                                href={`/group/${item.id}/channel/${channels?.channels?.[0].id!}`}
+                            >
+                                <Button
+                                    variant="ghost"
+                                    className="flex gap-2 w-full justify-start hover:bg-themeGray items-center"
+                                >
+                                    <Group />
+                                    {item.name}
+                                </Button>
+                            </Link>
+                        ))}
+                </DropDown>
             )}
         </div>
     )

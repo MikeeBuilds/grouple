@@ -65,9 +65,7 @@ const SideBar = ({ userid, groupid, mobile }: Props) => {
                     ? "hidden bg-black md:w-[300px] fixed md:flex"
                     : "w-full flex",
             )}
-        >
-            
-        </div>
+        ></div>
     )
 }
 

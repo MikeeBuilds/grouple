@@ -59,6 +59,4 @@ export const useSideBar = (groupid: string) => {
         toast("Success!", {
             description: "Channel created successfully",
         })
-
-        
 }

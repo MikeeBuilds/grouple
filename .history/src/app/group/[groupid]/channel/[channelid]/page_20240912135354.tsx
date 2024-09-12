@@ -1,11 +1,9 @@
-import React from 'react'
+import React from "react"
 
 type Props = {}
 
 const GroupChannelPage = (props: Props) => {
-  return (
-    <div>GroupChannelPage</div>
-  )
+    return <div>GroupChannelPage</div>
 }
 
 export default GroupChannelPage

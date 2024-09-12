@@ -1,7 +1,7 @@
-import { onAuthenticatedUser } from '@/actions/auth'
-import { currentUser } from '@clerk/nextjs/server'
-import { QueryClient } from '@tanstack/react-query'
-import React from 'react'
+import { onAuthenticatedUser } from "@/actions/auth"
+import { currentUser } from "@clerk/nextjs/server"
+import { QueryClient } from "@tanstack/react-query"
+import React from "react"
 
 type Props = {}
 
@@ -11,13 +11,10 @@ const GroupChannelPage = async (props: Props) => {
     const authUser = await onAuthenticatedUser()
 
     await client.prefetchQuery({
-        queryKey: ["channel-info"]
+        queryKey: ["channel-info"],
     })
 
-
-  return (
-    <div>GroupChannelPage</div>
-  )
+    return <div>GroupChannelPage</div>
 }
 
 export default GroupChannelPage

@@ -13,14 +13,12 @@ export const useNavigation = () => {
     }
 }
 
-
 export const useSideBar = (groupid: string) => {
     const { data: groups } = useQuery({
-        queryKey: ["user-groups"], 
+        queryKey: ["user-groups"],
     }) as { data: IGroups }
 
     const { data: groupInfo } = useQuery({
         queryKey: ["group-info"],
     }) as { data: IGroupInfo }
-    
 }
