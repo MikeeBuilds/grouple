@@ -8,7 +8,6 @@ import { usePathname } from "next/navigation"
 import { IChannels } from "."
 import { IconRenderer } from "../icon-renderer"
 import IconDropDown from "./icon-dropdown"
-import { UseChannelInfo } from "@/hooks/channels"
 
 type Props = {
   channels: IChannels[]
@@ -49,9 +48,9 @@ const SideBarMenu = ({
     triggerRef,
     onSetIcon,
     icon,
-    onDeleteChannel,
+    onChannelDetele,
     deleteVariables,
-  } = UseChannelInfo()
+  } = useChannelInfo()
 
   if (pathname.includes("settings")) {
     return (
@@ -155,7 +154,7 @@ const SideBarMenu = ({
                     channel.name !== "announcements" &&
                     userId === groupUserId && (
                       <Trash
-                        onClick={() => onDeleteChannel(channel.id)}
+                        onClick={() => onChannelDetele(channel.id)}
                         className="group-hover:inline hidden content-end text-themeTextGray hover:text-gray-400"
                         size={16}
                       />
