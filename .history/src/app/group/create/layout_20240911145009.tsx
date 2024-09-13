@@ -1,11 +1,11 @@
 import React from "react"
 
 type Props = {
-    children: React.ReactNode
+  children: React.ReactNode
 }
 
 const CreateGroupLayout = ({ children }: Props) => {
-    return <div className="container h-screen"></div>
+  return <div className="container h-screen"></div>
 }
 
 export default CreateGroupLayout

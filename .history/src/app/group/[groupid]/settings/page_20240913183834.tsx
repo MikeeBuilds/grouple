@@ -1,14 +1,9 @@
-import React from 'react'
+import React from "react"
 
 type Props = {}
 
-const GroupSettingsPage
- = ({}: Props) => {
-  return (
-    <div>GroupSettingsPage
-        
-    </div>
-  )
+const GroupSettingsPage = ({}: Props) => {
+  return <div>GroupSettingsPage</div>
 }
 
 export default GroupSettingsPage

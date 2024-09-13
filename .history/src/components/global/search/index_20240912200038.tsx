@@ -1,15 +1,12 @@
-import React from 'react'
+import React from "react"
 
 type Props = {
-    className?: string
-    inputStyle?: string
-    
+  className?: string
+  inputStyle?: string
 }
 
 const Search = (props: Props) => {
-  return (
-    <div>Search</div>
-  )
+  return <div>Search</div>
 }
 
 export default Search

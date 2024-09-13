@@ -4,10 +4,10 @@ import React from "react"
 type Props = {}
 
 const GroupChannelPage = async (props: Props) => {
-    const client = new QueryClient()
-    const use
+  const client = new QueryClient()
+  const use
 
-    return <div>GroupChannelPage</div>
+  return <div>GroupChannelPage</div>
 }
 
 export default GroupChannelPage

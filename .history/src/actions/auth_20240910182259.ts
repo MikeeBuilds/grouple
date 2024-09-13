@@ -1,6 +1,6 @@
 "use server"
 
 export const onAuthenticatedUser = async () => {
-    try {
-    } catch (error) {}
+  try {
+  } catch (error) {}
 }

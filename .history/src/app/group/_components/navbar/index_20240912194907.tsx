@@ -1,4 +1,4 @@
 type NavbarProps = {
-    groupid: string
-    useri
+  groupid: string
+  useri
 }

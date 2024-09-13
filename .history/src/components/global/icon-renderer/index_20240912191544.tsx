@@ -3,6 +3,7 @@ type IconRenderingProps = {
   icon: string
 }
 
-export const IconRenderer = ({ mode, icon}: IconRenderingProps) => {
-  switch (icon) {}
+export const IconRenderer = ({ mode, icon }: IconRenderingProps) => {
+  switch (icon) {
+  }
 }

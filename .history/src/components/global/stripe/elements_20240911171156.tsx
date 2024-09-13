@@ -2,11 +2,11 @@
 
 import { Elements } from "@stripe/react-stripe-js"
 type StripeElementsProps = {
-    children: React.ReactNode
+  children: React.ReactNode
 }
 
 export const StripeElements = ({ children }: StripeElementsProps) => {
-    const { stripePromise } = useStripeEleme()
+  const { stripePromise } = useStripeEleme()
 
-    return <div>{children}</div>
+  return <div>{children}</div>
 }

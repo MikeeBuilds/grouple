@@ -1,13 +1,13 @@
 import { onAuthenticatedUser } from "@/actions/auth"
 
 const GroupCreatePage = async ({
-    searchParams,
+  searchParams,
 }: {
-    searchParams: { [affiliate: string]: string }
+  searchParams: { [affiliate: string]: string }
 }) => {
-    const user = await onAuthenticatedUser()
+  const user = await onAuthenticatedUser()
 
-    return <div>GroupCreatePage</div>
+  return <div>GroupCreatePage</div>
 }
 
 export default GroupCreatePage

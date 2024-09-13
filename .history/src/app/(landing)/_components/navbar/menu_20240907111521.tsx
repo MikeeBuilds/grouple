@@ -3,20 +3,20 @@
 import { useNavigation } from "@/hooks/navigation"
 
 type MenuProps = {
-    orientation: "moblile" | "desktop"
+  orientation: "moblile" | "desktop"
 }
 
 type Props = { orientation: MenuProps }
 
 const Menu = (props: Props) => {
-    const { section, onSetSection } = useNavigation()
-    switch (orientation) {
-        case value:
-            break
+  const { section, onSetSection } = useNavigation()
+  switch (orientation) {
+    case value:
+      break
 
-        default:
-            break
-    }
+    default:
+      break
+  }
 }
 
 export default Menu

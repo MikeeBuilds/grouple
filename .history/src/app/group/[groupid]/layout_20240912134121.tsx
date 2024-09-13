@@ -4,24 +4,24 @@ import { redirect } from "next/navigation"
 import React from "react"
 
 type Props = {
-    children: React.ReactNode
-    params: {
-        groupid: string
-    }
+  children: React.ReactNode
+  params: {
+    groupid: string
+  }
 }
 
 const GroupLayout = async ({ children, params }: Props) => {
-    const query = new QueryClient()
+  const query = new QueryClient()
 
-    const user = await onAuthenticatedUser()
-    if (!user.id) redirect("/sign-in")
+  const user = await onAuthenticatedUser()
+  if (!user.id) redirect("/sign-in")
 
-    //group info
-    //users groups
-    //channels
-    // group subsc
+  //group info
+  //users groups
+  //channels
+  // group subsc
 
-    return <div>GroupLayout</div>
+  return <div>GroupLayout</div>
 }
 
 export default GroupLayout

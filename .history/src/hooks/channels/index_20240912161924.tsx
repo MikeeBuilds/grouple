@@ -1,5 +1,5 @@
 import { useRef } from "react"
 
 export const UseChannelInfo = () => {
-  const channelRef = useRef<HTML
+  const channelRef = useRef < HTML
 }

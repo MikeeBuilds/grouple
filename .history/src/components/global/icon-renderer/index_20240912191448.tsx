@@ -1,1 +1,1 @@
-export const IconRenderer = ({ mode, icon})
+export const IconRenderer = { mode, icon }

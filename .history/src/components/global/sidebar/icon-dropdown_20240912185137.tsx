@@ -1,13 +1,11 @@
-import React from 'react'
+import React from "react"
 
 type Props = {
-    ref: React.Ref
+  ref: React.Ref
 }
 
 const IconDropDown = (props: Props) => {
-  return (
-    <div>IconDropDown</div>
-  )
+  return <div>IconDropDown</div>
 }
 
 export default IconDropDown

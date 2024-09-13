@@ -17,7 +17,7 @@ export const useGroupChatOnline = (userid: string) => {
     const channel = supabaseClient.channel("tracking")
 
     channel
-      .on("presence", { event: "sync" }, () => { 
+      .on("presence", { event: "sync" }, () => {
         const state: any = channel.presenceState()
         console.log(state)
         for (const user in state) {
@@ -125,6 +125,6 @@ export const useGroupSettings = (groupid: string) => {
     reset,
     handleSubmit,
     watch,
-    setValue
+    setValue,
   }
 }

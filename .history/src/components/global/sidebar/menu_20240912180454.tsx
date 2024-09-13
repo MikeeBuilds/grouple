@@ -8,109 +8,110 @@ import { cn } from "@/lib/utils"
 import { SIDEBAR_SETTINGS_MENU } from "@/constants/menus"
 
 type Props = {
-    channels: IChannels[]
-    optimisticChannel:
-        | {
-              id: string
-              name: string
-              icon: string
-              createdAt: Date
-              groupId: string | null
-          }
-        | undefined
-    loading: boolean
-    groupid: string
-    groupUserId: string
-    userId: string
+  channels: IChannels[]
+  optimisticChannel:
+    | {
+        id: string
+        name: string
+        icon: string
+        createdAt: Date
+        groupId: string | null
+      }
+    | undefined
+  loading: boolean
+  groupid: string
+  groupUserId: string
+  userId: string
 }
 
 const SideBarMenu = ({
-    channels,
-    groupUserId,
-    groupid,
-    loading,
-    optimisticChannel,
-    userId,
+  channels,
+  groupUserId,
+  groupid,
+  loading,
+  optimisticChannel,
+  userId,
 }: Props) => {
-    const pathname = usePathname()
-    const currentPage = pathname.split("/").pop()
+  const pathname = usePathname()
+  const currentPage = pathname.split("/").pop()
 
-    const {
-        channel: current,
-        onEditChannel,
-        channelRef,
-        inputRef,
-        variables,
-        isPending,
-        edit,
-        triggerRef,
-        onSetIcon,
-        icon,
-        onDeleteChannel,
-        deleteVariables,
-    } = UseChannelInfo()
-    if (pathname.includes("settings")) {
-        return (
-            <div className="flex flex-col">
-                {SIDEBAR_SETTINGS_MENU.map((item) =>
-                    item.integration ? (
-                        userId === groupUserId && (
-                            <Link
-                                className={cn(
-                                    "flex gap-x-2 items-center font-semibold rounded-xl text-themeTextGray hover:bg-themeGray p-2",
-                                    currentPage === "settings"
-                                        ? !item.path && "text-white"
-                                        : currentPage === item.path &&
-                                              "text-white",
-                                )}
-                                href={`/group/${groupid}/settings/${item.path}`}
-                                key={item.id}
-                            >
-                                {item.icon}
-                                {item.label}
-                            </Link>
-                        )
-                    ) : (
-                        <Link
-                            className={cn(
-                                "flex gap-x-2 items-center font-semibold rounded-xl text-themeTextGray hover:bg-themeGray p-2",
-                                currentPage === "settings"
-                                    ? !item.path && "text-white"
-                                    : currentPage === item.path && "text-white",
-                            )}
-                            href={`/group/${groupid}/settings/${item.path}`}
-                            key={item.id}
-                        >
-                            {item.icon}
-                            {item.label}
-                        </Link>
-                    ),
-                )}
-            </div>
-        )
-    }
-
-    return <div className=" flex flex-col">
-        {channels.map((channel) => (
-            <Link
+  const {
+    channel: current,
+    onEditChannel,
+    channelRef,
+    inputRef,
+    variables,
+    isPending,
+    edit,
+    triggerRef,
+    onSetIcon,
+    icon,
+    onDeleteChannel,
+    deleteVariables,
+  } = UseChannelInfo()
+  if (pathname.includes("settings")) {
+    return (
+      <div className="flex flex-col">
+        {SIDEBAR_SETTINGS_MENU.map((item) =>
+          item.integration ? (
+            userId === groupUserId && (
+              <Link
                 className={cn(
-                    "flex gap-x-2 items-center font-semibold rounded-xl text-themeTextGray hover:bg-themeGray p-2",
-                    currentPage === "settings"
-                        ? !channel.name && "text-white"
-                        : currentPage === channel.name && "text-white",
+                  "flex gap-x-2 items-center font-semibold rounded-xl text-themeTextGray hover:bg-themeGray p-2",
+                  currentPage === "settings"
+                    ? !item.path && "text-white"
+                    : currentPage === item.path && "text-white",
                 )}
-                href={`/group/${groupid}/${channel.name}`}
-                key={channel.id}
+                href={`/group/${groupid}/settings/${item.path}`}
+                key={item.id}
+              >
+                {item.icon}
+                {item.label}
+              </Link>
+            )
+          ) : (
+            <Link
+              className={cn(
+                "flex gap-x-2 items-center font-semibold rounded-xl text-themeTextGray hover:bg-themeGray p-2",
+                currentPage === "settings"
+                  ? !item.path && "text-white"
+                  : currentPage === item.path && "text-white",
+              )}
+              href={`/group/${groupid}/settings/${item.path}`}
+              key={item.id}
             >
-                <img
-                    className="w-6 h-6 rounded-full"
-                    src={channel.icon}
-                    alt={channel.name}
-                />
-                {channel.name}
+              {item.icon}
+              {item.label}
             </Link>
-        ))}
+          ),
+        )}
+      </div>
+    )
+  }
+
+  return (
+    <div className=" flex flex-col">
+      {channels.map((channel) => (
+        <Link
+          className={cn(
+            "flex gap-x-2 items-center font-semibold rounded-xl text-themeTextGray hover:bg-themeGray p-2",
+            currentPage === "settings"
+              ? !channel.name && "text-white"
+              : currentPage === channel.name && "text-white",
+          )}
+          href={`/group/${groupid}/${channel.name}`}
+          key={channel.id}
+        >
+          <img
+            className="w-6 h-6 rounded-full"
+            src={channel.icon}
+            alt={channel.name}
+          />
+          {channel.name}
+        </Link>
+      ))}
     </div>
+  )
 }
 
 export default SideBarMenu

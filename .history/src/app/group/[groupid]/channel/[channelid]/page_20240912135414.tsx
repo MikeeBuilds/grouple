@@ -3,8 +3,8 @@ import React from "react"
 type Props = {}
 
 const GroupChannelPage = (props: Props) => {
-    const client
-    return <div>GroupChannelPage</div>
+  const client
+  return <div>GroupChannelPage</div>
 }
 
 export default GroupChannelPage

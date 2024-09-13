@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react"
 
 type Props = {
-    groupId: string
+  groupId: string
 }
 
 const GroupsettingsForm = ({ groupId }: Props) => {
@@ -15,12 +15,10 @@ const GroupsettingsForm = ({ groupId }: Props) => {
     previewThumbnail,
     onJsonDescription,
     setJsonDescription,
-    setOnD
+    setOnD,
   }
 
-  return (
-    <div>GroupsettingsForm</div>
-  )
+  return <div>GroupsettingsForm</div>
 }
 
 export default GroupsettingsForm

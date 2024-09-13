@@ -1,9 +1,9 @@
 const GroupCreatePage = async ({
-    searchParams,
+  searchParams,
 }: {
-    searchParams: { [affiliate: string]: string }
+  searchParams: { [affiliate: string]: string }
 }) => {
-    return <div>GroupCreatePage</div>
+  return <div>GroupCreatePage</div>
 }
 
 export default GroupCreatePage

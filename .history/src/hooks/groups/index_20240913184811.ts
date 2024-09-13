@@ -109,6 +109,4 @@ export const useGroupSettings = (groupid: string) => {
     data?.group?.jsonDescription !== null
       ? JSON.parse(data?.group?.jsonDescription as string)
       : undefined
-
-      
 }

@@ -1,5 +1,5 @@
 import { useRef } from "react"
 
 export const UseChannelInfo = () => {
-  const channelRef = useRef<HTMLAnchorElement | null
+  const channelRef = (useRef < HTMLAnchorElement) | null
 }

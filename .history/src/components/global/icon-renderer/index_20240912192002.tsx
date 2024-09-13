@@ -1,23 +1,30 @@
-import { FileDuoToneBlack, FileDuoToneWhite, Home, HomeDuoToneWhite, MegaPhoneDuoToneBlack, MegaPhoneDuoToneWhite } from "@/icons"
+import {
+  FileDuoToneBlack,
+  FileDuoToneWhite,
+  Home,
+  HomeDuoToneWhite,
+  MegaPhoneDuoToneBlack,
+  MegaPhoneDuoToneWhite,
+} from "@/icons"
 
 type IconRenderingProps = {
   mode: "LIGHT" | "DARK"
   icon: string
 }
 
-export const IconRenderer = ({ mode, icon}: IconRenderingProps) => {
+export const IconRenderer = ({ mode, icon }: IconRenderingProps) => {
   switch (icon) {
-    case "general": 
-    return mode === "DARK" ? <Home /> : <HomeDuoToneWhite />
+    case "general":
+      return mode === "DARK" ? <Home /> : <HomeDuoToneWhite />
     case "announcement":
-    return mode === "DARK" ? (
-     <MegaPhoneDuoToneBlack />
-    ) : (
-     <MegaPhoneDuoToneWhite />
-    )
+      return mode === "DARK" ? (
+        <MegaPhoneDuoToneBlack />
+      ) : (
+        <MegaPhoneDuoToneWhite />
+      )
     case "doc":
-    return mode === "DARK" ? <FileDuoToneBlack /> : <FileDuoToneWhite />
+      return mode === "DARK" ? <FileDuoToneBlack /> : <FileDuoToneWhite />
     default:
-        return <></>
+      return <></>
   }
 }

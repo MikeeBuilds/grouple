@@ -8,93 +8,92 @@ import { cn } from "@/lib/utils"
 import { SIDEBAR_SETTINGS_MENU } from "@/constants/menus"
 
 type Props = {
-    channels: IChannels[]
-    optimisticChannel:
-        | {
-              id: string
-              name: string
-              icon: string
-              createdAt: Date
-              groupId: string | null
-          }
-        | undefined
-    loading: boolean
-    groupid: string
-    groupUserId: string
-    userId: string
+  channels: IChannels[]
+  optimisticChannel:
+    | {
+        id: string
+        name: string
+        icon: string
+        createdAt: Date
+        groupId: string | null
+      }
+    | undefined
+  loading: boolean
+  groupid: string
+  groupUserId: string
+  userId: string
 }
 
 const SideBarMenu = ({
-    channels,
-    groupUserId,
-    groupid,
-    loading,
-    optimisticChannel,
-    userId,
+  channels,
+  groupUserId,
+  groupid,
+  loading,
+  optimisticChannel,
+  userId,
 }: Props) => {
-    const pathname = usePathname()
-    const currentPage = pathname.split("/").pop()
+  const pathname = usePathname()
+  const currentPage = pathname.split("/").pop()
 
-    const {
-        channel: current,
-        onEditChannel,
-        channelRef,
-        inputRef,
-        variables,
-        isPending,
-        edit,
-        triggerRef,
-        onSetIcon,
-        icon,
-        onDeleteChannel,
-        deleteVariables,
-    } = UseChannelInfo()
-    if (pathname.includes("settings")) {
-        return (
-            <div className="flex flex-col">
-                {SIDEBAR_SETTINGS_MENU.map((item) =>
-                    item.integration ? (
-                        userId === groupUserId && (
-                            <Link
-                                className={cn(
-                                    "flex gap-x-2 items-center font-semibold rounded-xl text-themeTextGray hover:bg-themeGray p-2",
-                                    currentPage === "settings"
-                                        ? !item.path && "text-white"
-                                        : currentPage === item.path &&
-                                              "text-white",
-                                )}
-                                href={`/group/${groupid}/settings/${item.path}`}
-                                key={item.id}
-                            >
-                                {item.icon}
-                                {item.label}
-                            </Link>
-                        )
-                    ) : (
-                        <Link
-                            className={cn(
-                                "flex gap-x-2 items-center font-semibold rounded-xl text-themeTextGray hover:bg-themeGray p-2",
-                                currentPage === "settings"
-                                    ? !item.path && "text-white"
-                                    : currentPage === item.path && "text-white",
-                            )}
-                            href={`/group/${groupid}/settings/${item.path}`}
-                            key={item.id}
-                        >
-                            {item.icon}
-                            {item.label}
-                        </Link>
-                    ),
+  const {
+    channel: current,
+    onEditChannel,
+    channelRef,
+    inputRef,
+    variables,
+    isPending,
+    edit,
+    triggerRef,
+    onSetIcon,
+    icon,
+    onDeleteChannel,
+    deleteVariables,
+  } = UseChannelInfo()
+  if (pathname.includes("settings")) {
+    return (
+      <div className="flex flex-col">
+        {SIDEBAR_SETTINGS_MENU.map((item) =>
+          item.integration ? (
+            userId === groupUserId && (
+              <Link
+                className={cn(
+                  "flex gap-x-2 items-center font-semibold rounded-xl text-themeTextGray hover:bg-themeGray p-2",
+                  currentPage === "settings"
+                    ? !item.path && "text-white"
+                    : currentPage === item.path && "text-white",
                 )}
-            </div>
-        )
-    }
+                href={`/group/${groupid}/settings/${item.path}`}
+                key={item.id}
+              >
+                {item.icon}
+                {item.label}
+              </Link>
+            )
+          ) : (
+            <Link
+              className={cn(
+                "flex gap-x-2 items-center font-semibold rounded-xl text-themeTextGray hover:bg-themeGray p-2",
+                currentPage === "settings"
+                  ? !item.path && "text-white"
+                  : currentPage === item.path && "text-white",
+              )}
+              href={`/group/${groupid}/settings/${item.path}`}
+              key={item.id}
+            >
+              {item.icon}
+              {item.label}
+            </Link>
+          ),
+        )}
+      </div>
+    )
+  }
 
-    return <div className="flex flex-col">
-        {channels && channels.length > 0 ?(<>
-        {channels.map((channel))}
-        </>) : <></>}
+  return (
+    <div className="flex flex-col">
+      {channels && channels.length > 0 ? <>{channels.map(channel)}</> : <></>}
     </div>
+  )
 }
 
 export default SideBarMenu

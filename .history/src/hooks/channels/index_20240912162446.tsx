@@ -6,7 +6,7 @@ export const UseChannelInfo = () => {
   const inputRef = useRef<HTMLInputElement | null>(null)
   const triggerRef = useRef<HTMLButtonElement | null>(null)
   const [channel, setChannel] = useState<string | undefined>(undefined)
-  const [edit , setEdit] = useState<boolean>(false)
+  const [edit, setEdit] = useState<boolean>(false)
   const [icon, setIcon] = useState<string | undefined>(undefined)
   const client = useQueryClient()
 
@@ -17,5 +17,4 @@ export const UseChannelInfo = () => {
       triggerRef.current?.click()
     }
   }
-
 }

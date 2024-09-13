@@ -1,6 +1,6 @@
 import { IChannels } from "."
 
 type Props = {
-    channels: IChannels[]
-    optimisticChannels
+  channels: IChannels[]
+  optimisticChannels
 }

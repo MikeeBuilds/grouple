@@ -1,13 +1,11 @@
-import React from 'react'
+import React from "react"
 
 type Props = {
-    groupId: string
+  groupId: string
 }
 
 const GroupsettingsForm = ({}: Props) => {
-  return (
-    <div>GroupsettingsForm</div>
-  )
+  return <div>GroupsettingsForm</div>
 }
 
 export default GroupsettingsForm

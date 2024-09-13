@@ -1,3 +1,1 @@
-type NavbarProps = {
-    
-}
+type NavbarProps = {}

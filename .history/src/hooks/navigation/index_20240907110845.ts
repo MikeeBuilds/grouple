@@ -1,6 +1,6 @@
 import { usePathname } from "next/navigation"
 
 export const useNavigation = () => {
-    const pathName = usePathname()
-    const [section, setSection] = useState<string>
+  const pathName = usePathname()
+  const [section, setSection] = useState<string>
 }

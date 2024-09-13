@@ -1,3 +1,1 @@
-export const IconRenderer = ({ mode, icon}: IconRenderingProps) => {
-    
-}
+export const IconRenderer = ({ mode, icon }: IconRenderingProps) => {}

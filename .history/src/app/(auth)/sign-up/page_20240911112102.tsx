@@ -2,9 +2,9 @@
 type Props = {}
 
 const SignUpForm = (props: Props) => {
-    const { register, errors, verifying }
+  const { register, errors, verifying }
 
-    return <div>SignUpForm</div>
+  return <div>SignUpForm</div>
 }
 
 export default SignUpForm

@@ -5,34 +5,34 @@ import { redirect } from "next/navigation"
 import React from "react"
 
 type Props = {
-    children: React.ReactNode
-    params: {
-        groupid: string
-    }
+  children: React.ReactNode
+  params: {
+    groupid: string
+  }
 }
 
 const GroupLayout = async ({ children, params }: Props) => {
-    const query = new QueryClient()
+  const query = new QueryClient()
 
-    const user = await onAuthenticatedUser()
-    if (!user.id) redirect("/sign-in")
+  const user = await onAuthenticatedUser()
+  if (!user.id) redirect("/sign-in")
 
-    //group info
-    await query.prefetchQuery({
-        queryKey: ["group-info"],
-        queryFn: () => onGetGroupInfo(params.groupid),
-    })
-    //users groups
-    await query.prefetchQuery({
-        queryKey: ["user-groups"],
-        queryFn: () => onGetUserGroups(user.id as string),
-    })
-    //channels
+  //group info
+  await query.prefetchQuery({
+    queryKey: ["group-info"],
+    queryFn: () => onGetGroupInfo(params.groupid),
+  })
+  //users groups
+  await query.prefetchQuery({
+    queryKey: ["user-groups"],
+    queryFn: () => onGetUserGroups(user.id as string),
+  })
+  //channels
 
-    // group subscriptions
-    // member chats
+  // group subscriptions
+  // member chats
 
-    return <div>GroupLayout</div>
+  return <div>GroupLayout</div>
 }
 
 export default GroupLayout

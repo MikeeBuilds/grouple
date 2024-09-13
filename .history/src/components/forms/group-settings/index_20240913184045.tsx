@@ -1,13 +1,9 @@
-import React from 'react'
+import React from "react"
 
-type Props = {
-    
-}
+type Props = {}
 
 const GroupsettingsForm = (props: Props) => {
-  return (
-    <div>GroupsettingsForm</div>
-  )
+  return <div>GroupsettingsForm</div>
 }
 
 export default GroupsettingsForm

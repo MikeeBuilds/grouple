@@ -3,17 +3,17 @@
 import { useNavigation } from "@/hooks/navigation"
 
 type MenuProps = {
-    orientation: "moblile" | "desktop"
+  orientation: "moblile" | "desktop"
 }
 
 type Props = { orientation: MenuProps }
 
 const Menu = ({ orientation }: MenuProps) => {
-    const { section, onSetSection } = useNavigation()
-    switch (orientation) {
-        case "desktop":
-            retu
-    }
+  const { section, onSetSection } = useNavigation()
+  switch (orientation) {
+    case "desktop":
+      retu
+  }
 }
 
 export default Menu

@@ -110,5 +110,5 @@ export const useGroupSettings = (groupid: string) => {
       ? JSON.parse(data?.group?.jsonDescription as string)
       : undefined
 
-      const [onJsonDescription, setJsonDescription] = useState<any>(JsonContent)
+  const [onJsonDescription, setJsonDescription] = useState<any>(JsonContent)
 }

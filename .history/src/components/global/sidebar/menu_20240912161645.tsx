@@ -4,49 +4,47 @@ import { usePathname } from "next/navigation"
 import { IChannels } from "."
 
 type Props = {
-    channels: IChannels[]
-    optimisticChannel:
-        | {
-              id: string
-              name: string
-              icon: string
-              createdAt: Date
-              groupId: string | null
-          }
-        | undefined
-    loading: boolean
-    groupid: string
-    groupUserId: string
-    userId: string
+  channels: IChannels[]
+  optimisticChannel:
+    | {
+        id: string
+        name: string
+        icon: string
+        createdAt: Date
+        groupId: string | null
+      }
+    | undefined
+  loading: boolean
+  groupid: string
+  groupUserId: string
+  userId: string
 }
 
 const SideBarMenu = ({
-    channels,
-    groupUserId,
-    groupid,
-    loading,
-    optimisticChannel,
-    userId,
+  channels,
+  groupUserId,
+  groupid,
+  loading,
+  optimisticChannel,
+  userId,
 }: Props) => {
+  const pathname = usePathname()
+  const currentPage = pathname.split("/").pop()
 
-    const pathname = usePathname()
-    const currentPage = pathname.split("/").pop()
-    
-    const {
-        channel: current,
-        onEditChannel,
-        channelRef,
-        inputRef,
-        variables,
-        isPending,
-        edit,
-        triggerRef,
-        onSection,
-        icon,
-        
-    }
+  const {
+    channel: current,
+    onEditChannel,
+    channelRef,
+    inputRef,
+    variables,
+    isPending,
+    edit,
+    triggerRef,
+    onSection,
+    icon,
+  }
 
-    return <div>SideBarMenu</div>
+  return <div>SideBarMenu</div>
 }
 
 export default SideBarMenu

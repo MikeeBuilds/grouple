@@ -6,11 +6,11 @@ import React from "react"
 type Props = {}
 
 const GroupChannelPage = async (props: Props) => {
-    const client = new QueryClient()
-    const user = await currentUser()
-    const authUser = await onAuthenticatedUser()
+  const client = new QueryClient()
+  const user = await currentUser()
+  const authUser = await onAuthenticatedUser()
 
-    await client.return(<div>GroupChannelPage</div>)
+  await client.return(<div>GroupChannelPage</div>)
 }
 
 export default GroupChannelPage

@@ -1,3 +1,1 @@
-export const UseChannelInfo = () => {
-  
-}
+export const UseChannelInfo = () => {}

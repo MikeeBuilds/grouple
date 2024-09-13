@@ -1,3 +1,3 @@
 type Props = {
-    channels: IChannels
+  channels: IChannels
 }
