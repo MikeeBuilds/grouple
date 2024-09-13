@@ -1,0 +1,4 @@
+type NavbarProps = {
+    grouupid: string
+    
+}
