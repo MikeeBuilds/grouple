@@ -135,9 +135,7 @@ export const useGroupSettings = (groupid: string) => {
     mode: "onChange",
   })
   const [previewIcon, setPreviewIcon] = useState<string | undefined>(undefined)
-  const [previewThumbnail, setPreviewThumbnail] = useState<string | undefined>(
-    undefined,
-  )
+  
 
   useEffect(() => {
     const previews = watch(({ thumbnail, icon }) => {
@@ -148,6 +146,5 @@ export const useGroupSettings = (groupid: string) => {
         setPreviewThumbnail(URL.createObjectURL(thumbnail[0]))
       }
     })
-    return () => previews.unsubscribe()
-  }, [watch])
+  })
 }

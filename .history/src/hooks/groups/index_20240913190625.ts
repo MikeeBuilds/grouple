@@ -134,20 +134,5 @@ export const useGroupSettings = (groupid: string) => {
     resolver: zodResolver(GroupSettingsSchema),
     mode: "onChange",
   })
-  const [previewIcon, setPreviewIcon] = useState<string | undefined>(undefined)
-  const [previewThumbnail, setPreviewThumbnail] = useState<string | undefined>(
-    undefined,
-  )
-
-  useEffect(() => {
-    const previews = watch(({ thumbnail, icon }) => {
-      if (icon[0]) {
-        setPreviewIcon(URL.createObjectURL(icon[0]))
-      }
-      if (thumbnail[0]) {
-        setPreviewThumbnail(URL.createObjectURL(thumbnail[0]))
-      }
-    })
-    return () => previews.unsubscribe()
-  }, [watch])
+  const [previewIcon, setPreviewIcon] = useState<string | undefined>()
 }

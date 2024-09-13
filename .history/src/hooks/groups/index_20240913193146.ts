@@ -13,6 +13,7 @@ import { useForm } from "react-hook-form"
 import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { GroupSettingsSchema } from "@/components/forms/group-settings/schema"
+import { set } from "date-fns"
 
 export const useGroupChatOnline = (userid: string) => {
   const dispatch: AppDispatch = useDispatch()
@@ -135,19 +136,15 @@ export const useGroupSettings = (groupid: string) => {
     mode: "onChange",
   })
   const [previewIcon, setPreviewIcon] = useState<string | undefined>(undefined)
-  const [previewThumbnail, setPreviewThumbnail] = useState<string | undefined>(
-    undefined,
-  )
 
   useEffect(() => {
-    const previews = watch(({ thumbnail, icon }) => {
+    const previews = watch({ thumbnail, icon }) => {
       if (icon[0]) {
         setPreviewIcon(URL.createObjectURL(icon[0]))
       }
       if (thumbnail[0]) {
         setPreviewThumbnail(URL.createObjectURL(thumbnail[0]))
       }
-    })
-    return () => previews.unsubscribe()
-  }, [watch])
-}
+    }
+  })
+

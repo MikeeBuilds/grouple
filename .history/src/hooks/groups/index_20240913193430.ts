@@ -148,6 +148,5 @@ export const useGroupSettings = (groupid: string) => {
         setPreviewThumbnail(URL.createObjectURL(thumbnail[0]))
       }
     })
-    return () => previews.unsubscribe()
-  }, [watch])
+  })
 }
