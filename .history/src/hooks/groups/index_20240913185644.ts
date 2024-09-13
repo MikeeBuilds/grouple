@@ -11,7 +11,6 @@ import { useDispatch } from "react-redux"
 import { JSONContent } from "novel"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
-import { zodResolver } from "@hookform/resolvers/zod"
 
 export const useGroupChatOnline = (userid: string) => {
   const dispatch: AppDispatch = useDispatch()
@@ -131,6 +130,6 @@ export const useGroupSettings = (groupid: string) => {
     setValue,
   } = useForm<z.infer<typeof GroupSettingsSchema>>({
     resolver: zodResolver(GroupSettingsSchema),
-    mode: "onChange",
+    mode: "onCha"
   })
 }

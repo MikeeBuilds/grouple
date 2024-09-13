@@ -8,10 +8,6 @@ import { AppDispatch } from "@/redux/store"
 import { useQuery } from "@tanstack/react-query"
 import { useEffect, useState } from "react"
 import { useDispatch } from "react-redux"
-import { JSONContent } from "novel"
-import { useForm } from "react-hook-form"
-import { z } from "zod"
-import { zodResolver } from "@hookform/resolvers/zod"
 
 export const useGroupChatOnline = (userid: string) => {
   const dispatch: AppDispatch = useDispatch()
@@ -20,7 +16,7 @@ export const useGroupChatOnline = (userid: string) => {
     const channel = supabaseClient.channel("tracking")
 
     channel
-      .on("presence", { event: "sync" }, () => { 
+      .on("presence", { event: "sync" }, () => {
         const state: any = channel.presenceState()
         console.log(state)
         for (const user in state) {
@@ -114,23 +110,5 @@ export const useGroupSettings = (groupid: string) => {
       ? JSON.parse(data?.group?.jsonDescription as string)
       : undefined
 
-  const [onJsonDescription, setJsonDescription] = useState<
-    JSONContent | undefined
-  >(JsonContent)
-
-  const [onDescription, setOnDescription] = useState<string | undefined>(
-    data?.group?.description || undefined,
-  )
-
-  const {
-    register,
-    formState: { errors },
-    reset,
-    handleSubmit,
-    watch,
-    setValue,
-  } = useForm<z.infer<typeof GroupSettingsSchema>>({
-    resolver: zodResolver(GroupSettingsSchema),
-    mode: "onChange",
-  })
+      const [onJsonDescription, setJsonDescription] = useState<JSONContent >(JsonContent)
 }
