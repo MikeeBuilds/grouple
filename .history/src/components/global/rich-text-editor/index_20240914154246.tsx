@@ -21,7 +21,7 @@ import { Image } from "./image"
 import { LinkSelector } from "./link-selector"
 import NodeSelector from "./node-selector"
 import { slashCommand, suggestionItems } from "./slash-command"
-import { TextButtons } from "./text-selector"
+import { TextButtons } from "./text-slector"
 import { Video } from "./video"
 
 type Props = {

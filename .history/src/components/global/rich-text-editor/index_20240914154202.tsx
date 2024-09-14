@@ -1,7 +1,5 @@
 "use client"
-import { cn } from "@/lib/utils"
-import { ErrorMessage } from "@hookform/error-message"
-import Placeholder from "@tiptap/extension-placeholder"
+
 import {
   EditorBubble,
   EditorCommand,
@@ -11,18 +9,34 @@ import {
   EditorRoot,
   JSONContent,
 } from "novel"
-import { CharacterCount, handleCommandNavigation } from "novel/extensions"
 import { useState } from "react"
 import { FieldErrors } from "react-hook-form"
 import { HtmlParser } from "../html-parser"
-import { ColorSelector } from "./color-selector"
+import { Edit, Link } from "lucide-react"
+import { cn } from "@/lib/utils"
 import { defaultExtensions } from "./extensions"
-import { Image } from "./image"
-import { LinkSelector } from "./link-selector"
-import NodeSelector from "./node-selector"
+import {
+  CharacterCount,
+  handleCommandNavigation,
+  Placeholder,
+} from "novel/extensions"
 import { slashCommand, suggestionItems } from "./slash-command"
-import { TextButtons } from "./text-selector"
 import { Video } from "./video"
+import { Image } from "./image"
+import NodeSelector from "./node-selector"
+import { LinkSelector } from "./link-selector"
+import { ColorSelector } from "./color-selector"
+import { TextButtons } from "./text-selector"
+
+// import {
+//     EditorBubble,
+//     EditorCommand,
+//     EditorCommandEmpty,
+//     EditorCommandItem,
+//     EditorContent,
+//     EditorRoot,
+//     JSONContent
+// } from "novel"
 
 type Props = {
   content: JSONContent | undefined
@@ -41,14 +55,14 @@ type Props = {
 }
 
 const BlockTextEditor = ({
-  setContent,
   content,
+  setContent,
   min,
   max,
   name,
   errors,
-  setTextContent,
   textContent,
+  setTextContent,
   onEdit,
   inline,
   disabled,
@@ -64,7 +78,6 @@ const BlockTextEditor = ({
 
   return (
     <div>
-      {" "}
       {htmlContent && !onEdit && inline ? (
         <HtmlParser html={htmlContent} />
       ) : (
@@ -73,7 +86,7 @@ const BlockTextEditor = ({
             className={cn(
               inline
                 ? onEdit && "mb-5"
-                : "border-[1px] rounded-xl px-10 py-5 text-base border-themeGray bg-themeBlack w-full",
+                : "border-themeGray bg-themeBlack w-full",
             )}
             initialContent={content}
             editorProps={{
@@ -82,27 +95,9 @@ const BlockTextEditor = ({
                 keydown: (_view, event) => handleCommandNavigation(event),
               },
               attributes: {
-                class: `prose prose-lg dark:prose-invert focus:outline-none max-w-full [&_h1]:text-4xl [&_h2]:text-3xl [&_h3]:text-2xl text-themeTextGray`,
+                class: `prose prose-lg dark:prove-invert focus:outline-none max-w-full [&_h1]:text-4xl [&_h2]:text-3xl [&_h3]:text-2xl text-themeTextGray`,
               },
             }}
-            extensions={[
-              // @ts-ignore
-              ...defaultExtensions,
-              // @ts-ignore
-              slashCommand,
-              // @ts-ignore
-              CharacterCount.configure({
-                limit: max,
-              }),
-              // @ts-ignore
-              Placeholder.configure({
-                placeholder: "Type / to insert element...",
-              }),
-              // @ts-ignore
-              Video,
-              // @ts-ignore
-              Image,
-            ]}
             onUpdate={({ editor }) => {
               const json = editor.getJSON()
               const text = editor.getText()
@@ -115,16 +110,28 @@ const BlockTextEditor = ({
               setTextContent(text)
               setCharacters(text.length)
             }}
+            extensions={[
+              ...defaultExtensions,
+              slashCommand,
+              CharacterCount.configure({
+                limit: max,
+              }),
+              Placeholder.configure({
+                placeholder: "Type / to insert element...",
+              }),
+              Video,
+              Image,
+            ]}
           >
-            <EditorCommand className="z-50 h-auto max-h-[330px]  w-72 overflow-y-auto rounded-md border border-muted bg-background px-1 py-2 shadow-md transition-all">
+            <EditorCommand className="z-50 h-auto max-h-[330px] w-72 overflow-y-auto rounded-md border border-muted bg-background px-1 py-2 shadow-md transition-all">
               <EditorCommandEmpty className="px-2 text-muted-foreground">
-                No results
+                No Results
               </EditorCommandEmpty>
               {suggestionItems.map((item: any) => (
                 <EditorCommandItem
                   value={item.title}
                   onCommand={(val) => item.command(val)}
-                  className={`flex w-full items-center space-x-2 rounded-md px-2 py-1 text-left text-sm hover:bg-accent aria-selected:bg-accent `}
+                  className={`flex w-full items-center space-x-2 rounded-md px-2 py-1 text-left text-sm hover:bg-accent aria-selected:bg-accent`}
                   key={item.title}
                 >
                   <div className="flex h-10 w-10 items-center justify-center rounded-md border border-muted bg-background">
@@ -142,62 +149,15 @@ const BlockTextEditor = ({
                 tippyOptions={{
                   placement: "top",
                 }}
-                className="flex w-fit max-w-[90vw] overflow-hidden rounded border border-muted bg-themeBlack text-themeTextGray shadow-xl"
+                className="flex w-fit max-w-[90vw] overflow-hidden rounded border border-muted bg-themeBlack text-themeGray shadow-xl"
               >
-                <NodeSelector open={openNode} onOpenChange={setOpenNode} />
-                <LinkSelector open={openLink} onOpenChange={setOpenLink} />
+                <NodeSelector open={openNode} onOpenChanges={setOpenNode} />
+                <LinkSelector open={openLink} onOpenChanges={setOpenLink} />
                 <TextButtons />
-                <ColorSelector open={openColor} onOpenChange={setOpenColor} />
+                <ColorSelector open={openColor} onOpenChanges={setOpenColor} />
               </EditorBubble>
             </EditorCommand>
           </EditorContent>
-          {inline ? (
-            onEdit && (
-              <div className="flex justify-between py-2">
-                <p
-                  className={cn(
-                    "text-xs",
-                    characters &&
-                      (characters < min || characters > max) &&
-                      "text-red-500",
-                  )}
-                >
-                  {characters || 0} / {max}
-                </p>
-                <ErrorMessage
-                  errors={errors}
-                  name={name}
-                  render={({ message }) => (
-                    <p className="text-red-400 mt-2">
-                      {message === "Required" ? "" : message}
-                    </p>
-                  )}
-                />
-              </div>
-            )
-          ) : (
-            <div className="flex justify-between py-2">
-              <p
-                className={cn(
-                  "text-xs",
-                  characters &&
-                    (characters < min || characters > max) &&
-                    "text-red-500",
-                )}
-              >
-                {characters || 0} / {max}
-              </p>
-              <ErrorMessage
-                errors={errors}
-                name={name}
-                render={({ message }) => (
-                  <p className="text-red-400 mt-2">
-                    {message === "Required" ? "" : message}
-                  </p>
-                )}
-              />
-            </div>
-          )}
         </EditorRoot>
       )}
     </div>
