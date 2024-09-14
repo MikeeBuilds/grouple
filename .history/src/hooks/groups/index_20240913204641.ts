@@ -207,5 +207,5 @@ export const useGroupSettings = (groupid: string) => {
     },
   })
   const router = useRouter()
-  const onUpdate = handleSubmit(async (values))
+  const onUpdate = handleSubmit(async(values))
 }

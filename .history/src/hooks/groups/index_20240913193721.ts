@@ -151,7 +151,5 @@ export const useGroupSettings = (groupid: string) => {
     return () => previews.unsubscribe()
   }, [watch])
 
-  const onSetDescription = () => {
-    
-  }
+  const onSetDescription = () => {}
 }

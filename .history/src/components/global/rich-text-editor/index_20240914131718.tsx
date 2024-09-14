@@ -63,9 +63,7 @@ const BlockTextEditor = ({
       ) : (
         <EditorRoot>
           <EditorContent
-          className={cn(
-            inline
-          )}
+            className={cn(inline)}
             editorProps={{
               editable: () => !disabled as boolean,
               handleDOMEvents: {

@@ -63,11 +63,9 @@ const BlockTextEditor = ({
       ) : (
         <EditorRoot>
           <EditorContent
-          className={cn(
-            inline 
-            ? onEdit && "mb-5"
-            : "border-themeGray bg-themeBlack"
-          )}
+            className={cn(
+              inline ? onEdit && "mb-5" : "border-themeGray bg-themeBlack",
+            )}
             editorProps={{
               editable: () => !disabled as boolean,
               handleDOMEvents: {

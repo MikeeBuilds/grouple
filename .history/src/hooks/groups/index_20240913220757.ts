@@ -112,22 +112,26 @@ export const useSearch = (search: "GROUPS" | "POSTS") => {
 }
 
 export const useGroupSettings = (groupid: string) => {
-  const router = useRouter();
-  const dispatch: AppDispatch = useDispatch();
+  const router = useRouter()
+  const dispatch: AppDispatch = useDispatch()
 
   // Fetch group info
   const { data } = useQuery({
     queryKey: ["group-info"],
     queryFn: () => onGetGroupInfo(groupid),
-  });
+  })
 
   // States for description and JSON content
-  const [onJsonDescription, setJsonDescription] = useState<JSONContent | undefined>(
-    data?.group?.jsonDescription ? JSON.parse(data.group.jsonDescription) : undefined
-  );
+  const [onJsonDescription, setJsonDescription] = useState<
+    JSONContent | undefined
+  >(
+    data?.group?.jsonDescription
+      ? JSON.parse(data.group.jsonDescription)
+      : undefined,
+  )
   const [onDescription, setOnDescription] = useState<string | undefined>(
-    data?.group?.description || undefined
-  );
+    data?.group?.description || undefined,
+  )
 
   // Form setup
   const {
@@ -139,31 +143,31 @@ export const useGroupSettings = (groupid: string) => {
   } = useForm<z.infer<typeof GroupSettingsSchema>>({
     resolver: zodResolver(GroupSettingsSchema),
     mode: "onChange",
-  });
+  })
 
   // Handle previews for icon and thumbnail
-  const [previewIcon, setPreviewIcon] = useState<string | undefined>(undefined);
+  const [previewIcon, setPreviewIcon] = useState<string | undefined>(undefined)
   const [previewThumbnail, setPreviewThumbnail] = useState<string | undefined>(
-    undefined
-  );
+    undefined,
+  )
 
   useEffect(() => {
     const previews = watch(({ thumbnail, icon }) => {
-      if (icon?.[0]) setPreviewIcon(URL.createObjectURL(icon[0]));
-      if (thumbnail?.[0]) setPreviewThumbnail(URL.createObjectURL(thumbnail[0]));
-    });
-    return () => previews.unsubscribe();
-  }, [watch]);
+      if (icon?.[0]) setPreviewIcon(URL.createObjectURL(icon[0]))
+      if (thumbnail?.[0]) setPreviewThumbnail(URL.createObjectURL(thumbnail[0]))
+    })
+    return () => previews.unsubscribe()
+  }, [watch])
 
   // Set descriptions in the form
   const onSetDescriptions = () => {
-    setValue("jsondescription", JSON.stringify(onJsonDescription));
-    setValue("description", onDescription);
-  };
+    setValue("jsondescription", JSON.stringify(onJsonDescription))
+    setValue("description", onDescription)
+  }
 
   useEffect(() => {
-    onSetDescriptions();
-  }, [onJsonDescription, onDescription]);
+    onSetDescriptions()
+  }, [onJsonDescription, onDescription])
 
   // Handle form submission and group updates
   const { mutate: update, isPending } = useMutation({
@@ -171,37 +175,70 @@ export const useGroupSettings = (groupid: string) => {
     mutationFn: async (values) => {
       try {
         if (values.thumbnail?.[0]) {
-          const uploaded = await upload.uploadFile(values.thumbnail[0]);
-          await onUpDateGroupSettings(groupid, "IMAGE", uploaded.uuid, `/group/${groupid}/settings`);
+          const uploaded = await upload.uploadFile(values.thumbnail[0])
+          await onUpDateGroupSettings(
+            groupid,
+            "IMAGE",
+            uploaded.uuid,
+            `/group/${groupid}/settings`,
+          )
         }
         if (values.icon?.[0]) {
-          const uploaded = await upload.uploadFile(values.icon[0]);
-          await onUpDateGroupSettings(groupid, "ICON", uploaded.uuid, `/group/${groupid}/settings`);
+          const uploaded = await upload.uploadFile(values.icon[0])
+          await onUpDateGroupSettings(
+            groupid,
+            "ICON",
+            uploaded.uuid,
+            `/group/${groupid}/settings`,
+          )
         }
         if (values.name) {
-          await onUpDateGroupSettings(groupid, "NAME", values.name, `/group/${groupid}/settings`);
+          await onUpDateGroupSettings(
+            groupid,
+            "NAME",
+            values.name,
+            `/group/${groupid}/settings`,
+          )
         }
         if (values.description) {
-          await onUpDateGroupSettings(groupid, "DESCRIPTION", values.description, `/group/${groupid}/settings`);
+          await onUpDateGroupSettings(
+            groupid,
+            "DESCRIPTION",
+            values.description,
+            `/group/${groupid}/settings`,
+          )
         }
         if (values.jsondescription) {
-          await onUpDateGroupSettings(groupid, "JSONDESCRIPTION", values.jsondescription, `/group/${groupid}/settings`);
+          await onUpDateGroupSettings(
+            groupid,
+            "JSONDESCRIPTION",
+            values.jsondescription,
+            `/group/${groupid}/settings`,
+          )
         }
-        if (!values.name && !values.description && !values.thumbnail?.length && !values.icon?.length && !values.jsondescription) {
-          toast("Error", { description: "Oops! looks like your form is empty" });
+        if (
+          !values.name &&
+          !values.description &&
+          !values.thumbnail?.length &&
+          !values.icon?.length &&
+          !values.jsondescription
+        ) {
+          toast("Error", { description: "Oops! looks like your form is empty" })
         }
       } catch (error) {
-        toast("Error", { description: "Something went wrong while updating group settings." });
+        toast("Error", {
+          description: "Something went wrong while updating group settings.",
+        })
       }
     },
-  });
+  })
 
   // Redirect if data status is incorrect
   useEffect(() => {
-    if (data?.status !== 200) router.push("/group/create");
-  }, [data?.status, router]);
+    if (data?.status !== 200) router.push("/group/create")
+  }, [data?.status, router])
 
-  const onUpdate = handleSubmit(async (values) => update(values));
+  const onUpdate = handleSubmit(async (values) => update(values))
 
   return {
     data,
@@ -215,5 +252,5 @@ export const useGroupSettings = (groupid: string) => {
     setJsonDescription,
     setOnDescription,
     onDescription,
-  };
-};
+  }
+}

@@ -241,11 +241,11 @@ export const useGroupSettings = (groupid: string) => {
           description: "Oops! looks like your form is empty",
         })
       }
-      return toast("Success",{
+      return toast("Success", {
         description: "Group settings updated successfully",
       })
     },
   })
   const router = useRouter()
-  const onUpadte = handleSubmit(async (value))
+  const onUpadte = handleSubmit(async(value))
 }

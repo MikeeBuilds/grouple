@@ -1,1 +1,1 @@
-import { upload } from "@/lib/uploadcare";
+import { upload } from "@/lib/uploadcare"

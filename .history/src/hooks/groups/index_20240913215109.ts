@@ -259,10 +259,10 @@ export const useGroupSettings = (groupid: string) => {
   const router = useRouter()
   const onUpdate = handleSubmit(async (values) => update(values))
   if (data?.status !== 200) router.push("/group/create")
-    return {
-      data,
-      register,
-      errors,
+  return {
+    data,
+    register,
+    errors,
     onUpdate,
     isPending,
     previewIcon,
@@ -270,6 +270,6 @@ export const useGroupSettings = (groupid: string) => {
     onJsonDescription,
     setJsonDescription,
     setOnDescription,
-    onDescription
+    onDescription,
   }
 }

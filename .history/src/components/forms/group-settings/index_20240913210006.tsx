@@ -30,10 +30,7 @@ const GroupsettingsForm = ({ groupId }: Props) => {
     <div className="flex 2xl:flex-row flex-col gap-10">
       <div className="flex flex-col gap-3 items-start">
         <p>Group Preview</p>
-        <GroupCard
-          id={data?.group?.id}
-          crea
-        />
+        <GroupCard id={data?.group?.id} crea />
       </div>
     </div>
   </form>

@@ -141,7 +141,6 @@ export const useGroupSettings = (groupid: string) => {
       if (icon[0]) {
         setPreviewIcon(URL.createObjectURL(icon[0]))
       }
-      
     })
   })
 }

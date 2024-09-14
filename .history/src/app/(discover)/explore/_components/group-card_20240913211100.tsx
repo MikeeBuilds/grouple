@@ -27,18 +27,16 @@ const GroupCard = ({
   return (
     <Link href={`/about/${id}`}>
       <Card className="bg-themeBlack border-themeGray rounded-xl overflow-hidden">
-        <img 
-        src={preview || `https://ucarecdn.com/${thumbnail}`} 
-        alt="thumbnail"
-        className="w-full opacity-70 h-56"
+        <img
+          src={preview || `https://ucarecdn.com/${thumbnail}`}
+          alt="thumbnail"
+          className="w-full opacity-70 h-56"
         />
         <div className="p-6">
-            <h3 className="text-lg text-themeDarkGray font-bold">
-                {name}
-            </h3>
-            <p className="text-base text-themeGray font-bold">
-                {description && truncateString(description)}
-            </p>
+          <h3 className="text-lg text-themeDarkGray font-bold">{name}</h3>
+          <p className="text-base text-themeGray font-bold">
+            {description && truncateString(description)}
+          </p>
         </div>
       </Card>
     </Link>

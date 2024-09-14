@@ -241,9 +241,7 @@ export const useGroupSettings = (groupid: string) => {
           description: "Oops! looks like your form is empty",
         })
       }
-      return toast("Success",
-        
-      )
+      return toast("Success")
     },
   })
 }

@@ -79,8 +79,7 @@ const BlockTextEditor = ({
               },
             }}
             onUpdate={({ editor }) => {
-                const json = editor.getJSON()
-                
+              const json = editor.getJSON()
             }}
           ></EditorContent>
         </EditorRoot>

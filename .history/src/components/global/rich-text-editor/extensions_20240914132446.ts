@@ -1,3 +1,1 @@
-const tiptapImage = TiptapImage.extend({
-    
-})
+const tiptapImage = TiptapImage.extend({})

@@ -154,6 +154,5 @@ export const useGroupSettings = (groupid: string) => {
   const onSetDescription = () => {
     const JSONContent = JSON.stringify(onJsonDescription)
     setValue("jsondescription", JSONContent)
-    
   }
 }

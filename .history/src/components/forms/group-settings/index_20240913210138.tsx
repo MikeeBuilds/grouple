@@ -39,7 +39,6 @@ const GroupsettingsForm = ({ groupId }: Props) => {
           privacy={data?.group?.privacy!}
           thumbnail={data?.group?.thumbnail!}
           name={data?.group?.name!}
-          
         />
       </div>
     </div>

@@ -164,5 +164,5 @@ export const useGroupSettings = (groupid: string) => {
     }
   }, [onJsonDescription, onDescription])
 
-  const { mutate: update, isPending}
+  const { mutate: update, isPending }
 }

@@ -1,12 +1,12 @@
-import parse from "html-react-parser";
-import { useEffect } from "react";
+import parse from "html-react-parser"
+import { useEffect } from "react"
 
 type HtmlParserProps = {
-    html: string;
+  html: string
 }
 
 export const HtmlParser = ({ html }: HtmlParserProps) => {
-    useEffect(() => {
-        setMount
-    })
+  useEffect(() => {
+    setMount
+  })
 }

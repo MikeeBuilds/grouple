@@ -24,8 +24,7 @@ const GroupsettingsForm = ({ groupId }: Props) => {
   ;<form
     className="flex flex-col h-full items-start gap-y-5"
     onSubmit={onUpdate}
-  >
-  </form>
+  ></form>
 }
 
 export default GroupsettingsForm

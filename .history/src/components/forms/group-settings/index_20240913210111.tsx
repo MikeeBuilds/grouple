@@ -36,7 +36,6 @@ const GroupsettingsForm = ({ groupId }: Props) => {
           userId={data?.group?.userId!}
           category={data?.group?.category!}
           description={data?.group?.description!}
-          
         />
       </div>
     </div>

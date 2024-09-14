@@ -1,1 +1,1 @@
-const tiptapImage 
+const tiptapImage

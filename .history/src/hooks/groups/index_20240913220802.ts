@@ -259,16 +259,16 @@ export const useGroupSettings = (groupid: string) => {
   const router = useRouter()
   const onUpdate = handleSubmit(async (values) => update(values))
   useEffect(() => {
-    if (data?.status !== 200) router.push("/group/create");
-  }, [data?.status, router]);
-  
+    if (data?.status !== 200) router.push("/group/create")
+  }, [data?.status, router])
+
   return {
     data,
     register,
     errors,
     onUpdate,
     isPending,
-    previewIcon, 
+    previewIcon,
     previewThumbnail,
     onJsonDescription,
     setJsonDescription,

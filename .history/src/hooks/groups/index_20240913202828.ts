@@ -1,6 +1,10 @@
 "use client"
 
-import { onGetGroupInfo, onSearchGroups, onUpDateGroupSettings } from "@/actions/groups"
+import {
+  onGetGroupInfo,
+  onSearchGroups,
+  onUpDateGroupSettings,
+} from "@/actions/groups"
 import { supabaseClient } from "@/lib/utils"
 import { onOnline } from "@/redux/slices/online-member-slice"
 import { onClearSearch, onSearch } from "@/redux/slices/search-slice"
@@ -169,9 +173,7 @@ export const useGroupSettings = (groupid: string) => {
     mutationFn: async (values: z.infer<typeof GroupSettingsSchema>) => {
       if (values.thumbnail && values.thumbnail.length > 0) {
         const uploaded = await Upload.uploadFile(values.thumbnail[0])
-        const updated = await onUpDateGroupSettings(
-          
-        )
+        const updated = await onUpDateGroupSettings()
       }
     },
   })

@@ -1,1 +1,1 @@
-import parse from "html-react-parser";
+import parse from "html-react-parser"

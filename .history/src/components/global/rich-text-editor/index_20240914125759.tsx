@@ -57,9 +57,7 @@ const BlockTextEditor = ({
       {htmlContent && !onEdit && inline ? (
         <HtmlParser html={htmlContent} />
       ) : (
-        <EditorRoot>
-            
-        </EditorRoot>
+        <EditorRoot></EditorRoot>
       )}
     </div>
   )

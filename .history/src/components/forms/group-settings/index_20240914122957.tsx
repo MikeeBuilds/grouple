@@ -96,10 +96,7 @@ const GroupSettingsForm = ({ groupId }: Props) => {
         />
         <Label className="flex flex-col gap-y-2">
           <p>Group Description</p>
-          <BlockTextEditor 
-            error={errors}
-            name="jsondescription"
-          />
+          <BlockTextEditor error={errors} name="jsondescription" />
         </Label>
         <Button className="self-start" type="submit">
           <Loader loading={isPending}>Update Settings</Loader>

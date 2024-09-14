@@ -157,7 +157,5 @@ export const useGroupSettings = (groupid: string) => {
     setValue("description", onDescription)
   }
 
-  useEffect(() => {
-    
-  })
+  useEffect(() => {})
 }

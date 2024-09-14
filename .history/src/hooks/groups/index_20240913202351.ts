@@ -159,8 +159,6 @@ export const useGroupSettings = (groupid: string) => {
 
   useEffect(() => {
     onSetDescriptions()
-    return () => {
-      
-    }
+    return () => {}
   })
 }

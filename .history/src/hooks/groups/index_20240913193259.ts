@@ -139,7 +139,6 @@ export const useGroupSettings = (groupid: string) => {
   useEffect(() => {
     const previews = watch(({ thumbnail, icon }) => {
       if (icon[0]) {
-        
       }
     })
   })

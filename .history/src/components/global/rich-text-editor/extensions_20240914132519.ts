@@ -1,9 +1,5 @@
 const tiptapImage = TiptapImage.extend({
-    addProseMirrorPlugins() {
-        return [
-            UploadImagesPlugin({
-                
-            })
-        ]
-    }
+  addProseMirrorPlugins() {
+    return [UploadImagesPlugin({})]
+  },
 })

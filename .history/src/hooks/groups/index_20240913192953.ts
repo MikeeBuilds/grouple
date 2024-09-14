@@ -137,6 +137,6 @@ export const useGroupSettings = (groupid: string) => {
   const [previewIcon, setPreviewIcon] = useState<string | undefined>(undefined)
 
   useEffect(() => {
-    const previews = watch({ thumb})
+    const previews = watch({ thumb })
   })
 }

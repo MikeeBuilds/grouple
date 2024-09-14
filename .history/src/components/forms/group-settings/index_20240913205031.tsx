@@ -20,8 +20,8 @@ const GroupsettingsForm = ({ groupId }: Props) => {
     onDescription,
   } = useGroupSettings(groupId)
 
-  return 
-  <form className="flex flex-col h-full"></form>
+  return
+  ;<form className="flex flex-col h-full"></form>
 }
 
 export default GroupsettingsForm

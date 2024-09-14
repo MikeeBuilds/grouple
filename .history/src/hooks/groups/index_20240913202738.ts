@@ -168,7 +168,6 @@ export const useGroupSettings = (groupid: string) => {
     mutationKey: ["group-settings"],
     mutationFn: async (values: z.infer<typeof GroupSettingsSchema>) => {
       if (values.thumbnail && values.thumbnail.length > 0) {
-        
       }
     },
   })

@@ -60,9 +60,7 @@ const BlockTextEditor = ({
         <HtmlParser html={htmlContent} />
       ) : (
         <EditorRoot>
-            <EditorContent edi>
-                
-            </EditorContent>
+          <EditorContent edi></EditorContent>
         </EditorRoot>
       )}
     </div>

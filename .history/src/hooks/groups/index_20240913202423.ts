@@ -163,6 +163,4 @@ export const useGroupSettings = (groupid: string) => {
       onSetDescriptions()
     }
   }, [onJsonDescription, onDescription])
-
-  
 }

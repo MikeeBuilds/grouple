@@ -97,7 +97,6 @@ const GroupSettingsForm = ({ groupId }: Props) => {
         />
         <Label className="flex flex-col gap-y-2">
           <p>Group Description</p>
-         
         </Label>
         <Button className="self-start" type="submit">
           <Loader loading={isPending}>Update Settings</Loader>

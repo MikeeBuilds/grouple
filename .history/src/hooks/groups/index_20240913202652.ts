@@ -166,8 +166,6 @@ export const useGroupSettings = (groupid: string) => {
 
   const { mutate: update, isPending } = useMutation({
     mutationKey: ["group-settings"],
-    mutationFn: async (values: z.infer<typeof GroupSettingsSchema>) => {
-      
-    },
+    mutationFn: async (values: z.infer<typeof GroupSettingsSchema>) => {},
   })
 }

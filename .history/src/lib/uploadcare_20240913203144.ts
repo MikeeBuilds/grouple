@@ -1,1 +1,1 @@
-export const upload = new upload
+export const upload = new upload()

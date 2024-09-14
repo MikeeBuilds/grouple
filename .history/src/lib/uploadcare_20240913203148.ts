@@ -1,1 +1,1 @@
-export const upload = new uploadClient
+export const upload = new uploadClient()

@@ -237,7 +237,6 @@ export const useGroupSettings = (groupid: string) => {
         !values.icon.length &&
         !values.jsondescription
       ) {
-        
       }
     },
   })

@@ -20,8 +20,7 @@ const GroupsettingsForm = ({ groupId }: Props) => {
     onDescription,
   } = useGroupSettings(groupId)
 
-  return 
-  
+  return
 }
 
 export default GroupsettingsForm

@@ -136,7 +136,5 @@ export const useGroupSettings = (groupid: string) => {
   })
   const [previewIcon, setPreviewIcon] = useState<string | undefined>(undefined)
 
-  useEffect(() => {
-    
-  })
+  useEffect(() => {})
 }

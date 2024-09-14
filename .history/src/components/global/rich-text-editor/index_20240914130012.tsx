@@ -60,12 +60,12 @@ const BlockTextEditor = ({
         <HtmlParser html={htmlContent} />
       ) : (
         <EditorRoot>
-            <EditorContent editorProps={{
-                editable: () => !disabled as boolean,
-                handle
-            }}>
-                
-            </EditorContent>
+          <EditorContent
+            editorProps={{
+              editable: () => !disabled as boolean,
+              handle,
+            }}
+          ></EditorContent>
         </EditorRoot>
       )}
     </div>

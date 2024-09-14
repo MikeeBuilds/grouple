@@ -5,7 +5,7 @@ import { useState } from "react"
 import { FieldErrors } from "react-hook-form"
 import { HtmlParser } from "../html-parser"
 import { Edit } from "lucide-react"
-import { handleCommandNavigation } from 'novel'
+import { handleCommandNavigation } from "novel"
 
 // import {
 //     EditorBubble,
@@ -61,18 +61,17 @@ const BlockTextEditor = ({
         <HtmlParser html={htmlContent} />
       ) : (
         <EditorRoot>
-            <EditorContent editorProps={{
-                editable: () => !disabled as boolean,
-                handleDOMEvents: {
-                    keydown: (_view, event) => 
-                        handleCommandNavigation
-                        (event),
-                    },
-                    attributes: {
-                        class: `prose prose-lg dark:prove-invert focus:outline-none max-w-full [&_h1]:text-4xl [&_h2]:text-3xl [&_h3]:text-2xl text-themeTextGray`,
-                }
+          <EditorContent
+            editorProps={{
+              editable: () => !disabled as boolean,
+              handleDOMEvents: {
+                keydown: (_view, event) => handleCommandNavigation(event),
+              },
+              attributes: {
+                class: `prose prose-lg dark:prove-invert focus:outline-none max-w-full [&_h1]:text-4xl [&_h2]:text-3xl [&_h3]:text-2xl text-themeTextGray`,
+              },
             }}
-            ></EditorContent>
+          ></EditorContent>
         </EditorRoot>
       )}
     </div>

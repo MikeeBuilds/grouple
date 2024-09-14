@@ -166,6 +166,6 @@ export const useGroupSettings = (groupid: string) => {
 
   const { mutate: update, isPending } = useMutation({
     mutationKey: ["group-settings"],
-    mutationFn: async ()
+    mutationFn: async(),
   })
 }

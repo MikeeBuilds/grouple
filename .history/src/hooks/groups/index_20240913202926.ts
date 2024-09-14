@@ -1,6 +1,10 @@
 "use client"
 
-import { onGetGroupInfo, onSearchGroups, onUpDateGroupSettings } from "@/actions/groups"
+import {
+  onGetGroupInfo,
+  onSearchGroups,
+  onUpDateGroupSettings,
+} from "@/actions/groups"
 import { supabaseClient } from "@/lib/utils"
 import { onOnline } from "@/redux/slices/online-member-slice"
 import { onClearSearch, onSearch } from "@/redux/slices/search-slice"
@@ -175,7 +179,6 @@ export const useGroupSettings = (groupid: string) => {
           uploaded.uuid,
           `/group/${groupid}/settings`,
         )
-        
       }
     },
   })

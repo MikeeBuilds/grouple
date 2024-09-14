@@ -265,7 +265,7 @@ export const useGroupSettings = (groupid: string) => {
     errors,
     onUpdate,
     isPending,
-    previewIcon, 
+    previewIcon,
     previewThumbnail,
     onJsonDescription,
     setJsonDescription,

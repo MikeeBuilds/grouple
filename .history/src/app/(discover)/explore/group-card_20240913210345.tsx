@@ -1,13 +1,9 @@
-import React from 'react'
+import React from "react"
 
-type Props = {
-    
-}
+type Props = {}
 
 const GroupCard = (props: Props) => {
-  return (
-    <div>GroupCard</div>
-  )
+  return <div>GroupCard</div>
 }
 
 export default GroupCard

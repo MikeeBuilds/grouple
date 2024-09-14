@@ -20,8 +20,8 @@ const GroupsettingsForm = ({ groupId }: Props) => {
     onDescription,
   } = useGroupSettings(groupId)
 
-  return 
-  <form className="flex flex-col h-full items-start gap-y-5" on></form>
+  return
+  ;<form className="flex flex-col h-full items-start gap-y-5" on></form>
 }
 
 export default GroupsettingsForm

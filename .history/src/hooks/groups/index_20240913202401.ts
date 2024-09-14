@@ -162,5 +162,5 @@ export const useGroupSettings = (groupid: string) => {
     return () => {
       onSetDescriptions()
     }
-  }, )
+  })
 }

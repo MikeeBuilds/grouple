@@ -117,10 +117,9 @@ export const useGroupSettings = (groupid: string) => {
     queryFn: () => onGetGroupInfo(groupid),
   })
 
-  const JsonContent =
-    data?.group?.jsonDescription 
-      ? JSON.parse(data?.group?.jsonDescription as string)
-      : undefined
+  const JsonContent = data?.group?.jsonDescription
+    ? JSON.parse(data?.group?.jsonDescription as string)
+    : undefined
 
   const [onJsonDescription, setJsonDescription] = useState<
     JSONContent | undefined
@@ -241,7 +240,7 @@ export const useGroupSettings = (groupid: string) => {
           description: "Oops! looks like your form is empty",
         })
       }
-      return toast("Success",{
+      return toast("Success", {
         description: "Group settings updated successfully",
       })
     },

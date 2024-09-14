@@ -1,4 +1,3 @@
 type Props = {
-    content: JSONContent
-    
+  content: JSONContent
 }

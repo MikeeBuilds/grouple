@@ -27,13 +27,13 @@ const GroupCard = ({
   return (
     <Link href={`/about/${id}`}>
       <Card className="bg-themeBlack border-themeGray rounded-xl overflow-hidden">
-        <img 
-        src={preview || `https://ucarecdn.com/${thumbnail}`} 
-        alt="thumbnail"
-        className="w-full opacity-70 h-56"
+        <img
+          src={preview || `https://ucarecdn.com/${thumbnail}`}
+          alt="thumbnail"
+          className="w-full opacity-70 h-56"
         />
         <div className="p-6">
-            <h3></h3>
+          <h3></h3>
         </div>
       </Card>
     </Link>

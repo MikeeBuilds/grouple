@@ -20,7 +20,8 @@ import { supabaseClient, validateURLString } from "@/lib/utils"
 // import { onChat } from "@/redux/slices/chats-slices"
 import {
   onClearList,
-  onInfiniteScroll,} from "@/redux/slices/infinite-scroll-slice"
+  onInfiniteScroll,
+} from "@/redux/slices/infinite-scroll-slice"
 
 import { onOnline } from "@/redux/slices/online-member-slice"
 import {

@@ -232,6 +232,4 @@ export const useGroupSettings = (groupid: string) => {
       }
     },
   })
-  
-  
 }

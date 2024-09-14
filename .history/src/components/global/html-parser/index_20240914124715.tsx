@@ -1,6 +1,4 @@
-import parse from "html-react-parser";
-import { useEffect } from "react";
+import parse from "html-react-parser"
+import { useEffect } from "react"
 
-type HtmlParserProps = {
-    
-}
+type HtmlParserProps = {}

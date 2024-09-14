@@ -1,5 +1,3 @@
-
-
 import { EditorContent, JSONContent } from "novel"
 import { useState } from "react"
 import { FieldErrors } from "react-hook-form"
@@ -60,9 +58,7 @@ const BlockTextEditor = ({
         <HtmlParser html={htmlContent} />
       ) : (
         <EditorRoot>
-            <EditorContent>
-
-            </EditorContent>
+          <EditorContent></EditorContent>
         </EditorRoot>
       )}
     </div>

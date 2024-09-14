@@ -78,7 +78,7 @@ const BlockTextEditor = ({
                 class: `prose prose-lg dark:prove-invert focus:outline-none max-w-full [&_h1]:text-4xl [&_h2]:text-3xl [&_h3]:text-2xl text-themeTextGray`,
               },
             }}
-            onUpdate={({ editor })}
+            onUpdate={{ editor }}
           ></EditorContent>
         </EditorRoot>
       )}

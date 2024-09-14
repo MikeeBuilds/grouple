@@ -1,3 +1,3 @@
 const tiptapImage = TiptapImage.extend({
-    addProse
+  addProse,
 })

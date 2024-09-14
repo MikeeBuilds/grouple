@@ -1,3 +1,3 @@
-import { UploadClient } from 'uploadcare-widget'
+import { UploadClient } from "uploadcare-widget"
 
 export const upload = new uploadClient()
