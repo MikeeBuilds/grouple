@@ -99,7 +99,7 @@ const BlockTextEditor = ({
               CharacterCount.configure({
                 limit: max,
               }),
-              
+
               Video,
               Image,
             ]}

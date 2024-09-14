@@ -7,7 +7,11 @@ import { HtmlParser } from "../html-parser"
 import { Edit } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { defaultExtensions } from "./extensions"
-import { CharacterCount, handleCommandNavigation, Placeholder } from "novel/extensions"
+import {
+  CharacterCount,
+  handleCommandNavigation,
+  Placeholder,
+} from "novel/extensions"
 import Image from "next/image"
 import { slashCommand } from "./slash-command"
 
@@ -100,7 +104,7 @@ const BlockTextEditor = ({
                 limit: max,
               }),
               Placeholder.configure({
-                placeholder
+                placeholder,
               }),
               Video,
               Image,

@@ -1,7 +1,7 @@
 "use client"
 
 import {
-    EditorBubble,
+  EditorBubble,
   EditorCommand,
   EditorCommandEmpty,
   EditorCommandItem,

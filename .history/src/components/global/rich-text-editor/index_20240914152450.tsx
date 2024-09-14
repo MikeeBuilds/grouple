@@ -7,7 +7,11 @@ import { HtmlParser } from "../html-parser"
 import { Edit } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { defaultExtensions } from "./extensions"
-import { CharacterCount, handleCommandNavigation, Placeholder } from "novel/extensions"
+import {
+  CharacterCount,
+  handleCommandNavigation,
+  Placeholder,
+} from "novel/extensions"
 import { slashCommand } from "./slash-command"
 import { Video } from "./video"
 import { Image } from "./image"
@@ -107,9 +111,7 @@ const BlockTextEditor = ({
               Image,
             ]}
           >
-            <EditorCommand className="z-50 h-auto max-h-[330px] w-72 overflow-y-auto rounded-md border border-muted bg-background px-1 py-2 shadow-md transition-all">
-                
-            </EditorCommand>
+            <EditorCommand className="z-50 h-auto max-h-[330px] w-72 overflow-y-auto rounded-md border border-muted bg-background px-1 py-2 shadow-md transition-all"></EditorCommand>
           </EditorContent>
         </EditorRoot>
       )}

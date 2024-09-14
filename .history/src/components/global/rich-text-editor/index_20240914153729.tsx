@@ -1,7 +1,7 @@
 "use client"
 
 import {
-    EditorBubble,
+  EditorBubble,
   EditorCommand,
   EditorCommandEmpty,
   EditorCommandItem,
@@ -143,14 +143,13 @@ const BlockTextEditor = ({
               ))}
               <EditorBubble
                 tippyOptions={{
-                    placement: "top",
+                  placement: "top",
                 }}
                 className="flex w-fit max-w-[90vw] overflow-hidden rounded border border-muted bg-themeBlack text-themeGray shadow-xl"
               >
                 <NodeSelector open={openNode} onOpenChanges={setOpenNode} />
                 <LinkSelector open={openLink} onOpenChanges={setOpenLink} />
                 <TextButtons />
-                
               </EditorBubble>
             </EditorCommand>
           </EditorContent>

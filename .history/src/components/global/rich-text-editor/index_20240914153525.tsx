@@ -1,7 +1,7 @@
 "use client"
 
 import {
-    EditorBubble,
+  EditorBubble,
   EditorCommand,
   EditorCommandEmpty,
   EditorCommandItem,
@@ -143,11 +143,9 @@ const BlockTextEditor = ({
               ))}
               <EditorBubble
                 tippyOptions={{
-                    placement: "top",
+                  placement: "top",
                 }}
-              >
-                
-              </EditorBubble>
+              ></EditorBubble>
             </EditorCommand>
           </EditorContent>
         </EditorRoot>

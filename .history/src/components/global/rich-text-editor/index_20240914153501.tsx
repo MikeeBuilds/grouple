@@ -1,7 +1,7 @@
 "use client"
 
 import {
-    EditorBubble,
+  EditorBubble,
   EditorCommand,
   EditorCommandEmpty,
   EditorCommandItem,
@@ -141,9 +141,7 @@ const BlockTextEditor = ({
                   </div>
                 </EditorCommandItem>
               ))}
-              <EditorBubble>
-                
-              </EditorBubble>
+              <EditorBubble></EditorBubble>
             </EditorCommand>
           </EditorContent>
         </EditorRoot>

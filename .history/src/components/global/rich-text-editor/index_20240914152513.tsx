@@ -1,13 +1,23 @@
 "use client"
 
-import { EditorCommand, EditorCommandEmpty, EditorContent, EditorRoot, JSONContent } from "novel"
+import {
+  EditorCommand,
+  EditorCommandEmpty,
+  EditorContent,
+  EditorRoot,
+  JSONContent,
+} from "novel"
 import { useState } from "react"
 import { FieldErrors } from "react-hook-form"
 import { HtmlParser } from "../html-parser"
 import { Edit } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { defaultExtensions } from "./extensions"
-import { CharacterCount, handleCommandNavigation, Placeholder } from "novel/extensions"
+import {
+  CharacterCount,
+  handleCommandNavigation,
+  Placeholder,
+} from "novel/extensions"
 import { slashCommand } from "./slash-command"
 import { Video } from "./video"
 import { Image } from "./image"
@@ -108,7 +118,7 @@ const BlockTextEditor = ({
             ]}
           >
             <EditorCommand className="z-50 h-auto max-h-[330px] w-72 overflow-y-auto rounded-md border border-muted bg-background px-1 py-2 shadow-md transition-all">
-                <EditorCommandEmpty></EditorCommandEmpty>
+              <EditorCommandEmpty></EditorCommandEmpty>
             </EditorCommand>
           </EditorContent>
         </EditorRoot>
