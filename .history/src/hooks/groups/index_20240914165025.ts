@@ -1,7 +1,6 @@
 "use client"
 
 import {
-  onGetExploreGroup,
   onGetGroupInfo,
   onSearchGroups,
   onUpDateGroupSettings,
@@ -21,7 +20,6 @@ import { GroupSettingsSchema } from "@/components/forms/group-settings/schema"
 import { toast } from "sonner"
 import { upload } from "@/lib/uploadcare"
 import { useRouter } from "next/navigation"
-import { onClearList, onInfiniteScroll } from "@/redux/slices/infinite-scroll-slice"
 
 export const useGroupChatOnline = (userid: string) => {
   const dispatch: AppDispatch = useDispatch()
@@ -283,27 +281,4 @@ export const useGroupList = (query: string) => {
   }
 
   return { groups, status }
-}
-
-export const useExploreSlider = (query: string, paginate: number) => {
-  const [onLoadSlider, setOnLoadSlider] = useState<boolean>(false)
-  const dispatch: AppDispatch = useDispatch()
-  const { data, refetch, isFetching, isFetched } = useQuery({
-    queryKey: ["fetch-group-slides"],
-    queryFn: () => onGetExploreGroup(query, paginate | 0),
-    enabled: false,
-  })
-
-  if (isFetched && data?.status === 200 && data.groups) {
-    dispatch(onInfiniteScroll({ data: data.groups }))
-  }
-
-  useEffect(() => {
-    setOnLoadSlider(true)
-    return () => {
-      onLoadSlider
-    }
-  }, [])
-
-  return { refetch, isFetching, data, onLoadSlider }
-}
+  

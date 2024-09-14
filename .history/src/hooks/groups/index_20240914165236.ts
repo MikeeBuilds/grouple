@@ -1,7 +1,6 @@
 "use client"
 
 import {
-  onGetExploreGroup,
   onGetGroupInfo,
   onSearchGroups,
   onUpDateGroupSettings,
@@ -21,7 +20,7 @@ import { GroupSettingsSchema } from "@/components/forms/group-settings/schema"
 import { toast } from "sonner"
 import { upload } from "@/lib/uploadcare"
 import { useRouter } from "next/navigation"
-import { onClearList, onInfiniteScroll } from "@/redux/slices/infinite-scroll-slice"
+import { onClearList } from "@/redux/slices/infinite-scroll-slice"
 
 export const useGroupChatOnline = (userid: string) => {
   const dispatch: AppDispatch = useDispatch()

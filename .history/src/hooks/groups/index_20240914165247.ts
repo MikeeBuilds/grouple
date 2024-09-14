@@ -1,7 +1,6 @@
 "use client"
 
 import {
-  onGetExploreGroup,
   onGetGroupInfo,
   onSearchGroups,
   onUpDateGroupSettings,
