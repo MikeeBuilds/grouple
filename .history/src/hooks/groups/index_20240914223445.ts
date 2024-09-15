@@ -11,6 +11,7 @@ import {
   onUpDateGroupSettings,
   onUpdateGroupGallery,
 } from "@/actions/groups"
+import { GroupSettingsSchema } from "@/components/forms/group-settings/schema"
 import { AddCustomDomainSchema } from "@/components/forms/domain/schema"
 import { GroupSettingsSchema } from "@/components/forms/group-settings/schema"
 import { SendNewMessageSchema } from "@/components/forms/huddles/schema"
