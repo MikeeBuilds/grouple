@@ -264,7 +264,8 @@ export const useGroupSettings = (groupid: string) => {
     onDescription,
   }
 }
-
+export const onGetPaginatedPosts = async (
+}
 
 
 export const useGroupList = (query: string) => {

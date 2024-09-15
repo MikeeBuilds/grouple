@@ -22,6 +22,7 @@ import { toast } from "sonner"
 import { upload } from "@/lib/uploadcare"
 import { useRouter } from "next/navigation"
 import { onClearList, onInfiniteScroll } from "@/redux/slices/infinite-scroll-slice"
+import { onAuthenticatedUser } from "@/actions/auth"
 
 export const useGroupChatOnline = (userid: string) => {
   const dispatch: AppDispatch = useDispatch()
@@ -262,6 +263,59 @@ export const useGroupSettings = (groupid: string) => {
     setJsonDescription,
     setOnDescription,
     onDescription,
+  }
+}
+export const onGetPaginatedPosts = async (
+  identifier: string,
+  paginate: number,
+) => {
+  try {
+    const user = await onAuthenticatedUser()
+    const posts = await client.post.findMany({
+      where: {
+        channelId: identifier,
+      },
+      skip: paginate,
+      take: 2,
+      orderBy: {
+        createdAt: "desc",
+      },
+      include: {
+        channel: {
+          select: {
+            name: true,
+          },
+        },
+        author: {
+          select: {
+            firstname: true,
+            lastname: true,
+            image: true,
+          },
+        },
+        _count: {
+          select: {
+            likes: true,
+            comments: true,
+          },
+        },
+        likes: {
+          where: {
+            userId: user.id!,
+          },
+          select: {
+            userId: true,
+            id: true,
+          },
+        },
+      },
+    })
+
+    if (posts && posts.length > 0) return { status: 200, posts }
+
+    return { status: 404 }
+  } catch (error) {
+    return { status: 400 }
   }
 }
 

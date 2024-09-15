@@ -12,7 +12,7 @@ export const NoResult = () => {
       <Empty />
       <div>
         <p className="text-xl font-semibold text-themeTextGray">
-          Hmm... Its quite empty in here
+          Hmm... Its quiet in here
         </p>
         <p className="text-sm text-themeTextGray">0 Results Found...</p>
       </div>

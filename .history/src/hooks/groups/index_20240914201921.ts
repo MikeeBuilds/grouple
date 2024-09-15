@@ -265,6 +265,7 @@ export const useGroupSettings = (groupid: string) => {
   }
 }
 
+export const onGetP
 
 
 export const useGroupList = (query: string) => {

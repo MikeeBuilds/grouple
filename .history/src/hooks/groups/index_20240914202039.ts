@@ -265,6 +265,9 @@ export const useGroupSettings = (groupid: string) => {
   }
 }
 
+export const onGetPaginatedPosts = async (
+  const posts = await client.post.find
+)
 
 
 export const useGroupList = (query: string) => {
