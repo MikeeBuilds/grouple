@@ -41,7 +41,7 @@ export const Navbar = async () => {
             <CheckBadge />
             Create Group
           </Button>
-        </Link> 
+        </Link>
         {user.status === 200 ? (
           <UserWidget image={user.image!} />
         ) : (

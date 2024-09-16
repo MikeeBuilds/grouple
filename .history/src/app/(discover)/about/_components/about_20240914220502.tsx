@@ -1,13 +1,11 @@
-import { useGroupInfo } from '@/hooks/groups'
-import React from 'react'
+import { useGroupInfo } from "@/hooks/groups"
+import React from "react"
 
-type Props = { userid: string, groupid: string }
+type Props = { userid: string; groupid: string }
 
 const AboutGroup = ({ userid, groupid }: Props) => {
-    const { group } = UseGroupInfo()
-  return (
-    <div>AboutGroup</div>
-  )
+  const { group } = UseGroupInfo()
+  return <div>AboutGroup</div>
 }
 
 export default AboutGroup

@@ -1,13 +1,11 @@
-import React from 'react'
+import React from "react"
 
 type ExploreLayoutProps = {
-    children: React.ReactNode
+  children: React.ReactNode
 }
 
 const DiscoverLayout = (props: Props) => {
-  return (
-    <div>DiscoverLayout</div>
-  )
+  return <div>DiscoverLayout</div>
 }
 
 export default DiscoverLayout

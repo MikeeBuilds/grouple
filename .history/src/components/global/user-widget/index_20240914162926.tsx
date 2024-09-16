@@ -18,5 +18,5 @@ export const UserWidget = ({ image, groupid, userid }: UserWidgetProps) => {
       </Link>
       <UserAvatar userid={userid} image={image} groupid={groupid} />
     </div>
-  ) 
+  )
 }

@@ -1,27 +1,25 @@
-import { QueryClient } from '@tanstack/react-query'
-import React from 'react'
+import { QueryClient } from "@tanstack/react-query"
+import React from "react"
 
 type Props = {
-    params: {
-        groupid: string
-    }
+  params: {
+    groupid: string
+  }
 }
 
-const Page = ({params}: Props) => {
-    const query = new QueryClient()
+const Page = ({ params }: Props) => {
+  const query = new QueryClient()
 
-    await query.prefetchQuery({
-        queryKey: ["about-group-info"],
-        queryFn: () => onGetGroupInfo(params.groupid),
-    })
+  await query.prefetchQuery({
+    queryKey: ["about-group-info"],
+    queryFn: () => onGetGroupInfo(params.groupid),
+  })
 
-    await query.prefetchQuery({
-        queryKey: ["active-s"]
-    })
+  await query.prefetchQuery({
+    queryKey: ["active-s"],
+  })
 
-  return (
-    <div>Page</div>
-  )
+  return <div>Page</div>
 }
 
 export default Page

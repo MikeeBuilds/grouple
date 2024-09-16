@@ -22,4 +22,3 @@ const CompleteOAuthAfterCallback = async () => {
 }
 
 export default CompleteOAuthAfterCallback
-

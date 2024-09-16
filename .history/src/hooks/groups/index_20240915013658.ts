@@ -391,7 +391,6 @@ export const useGroupAbout = (
   const [onDescription, setOnDescription] = useState<string | undefined>(
     description || undefined,
   )
-  
 
   const [onHtmlDescription, setOnHtmlDescription] = useState<
     string | undefined

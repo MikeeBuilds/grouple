@@ -7,7 +7,11 @@ import {
 } from "@/actions/groups"
 import { supabaseClient } from "@/lib/utils"
 import { onOnline } from "@/redux/slices/online-member-slice"
-import { GroupStateProps, onClearSearch, onSearch } from "@/redux/slices/search-slice"
+import {
+  GroupStateProps,
+  onClearSearch,
+  onSearch,
+} from "@/redux/slices/search-slice"
 import { AppDispatch } from "@/redux/store"
 import { useMutation, useQuery } from "@tanstack/react-query"
 import { useEffect, useLayoutEffect, useState } from "react"
@@ -262,7 +266,6 @@ export const useGroupSettings = (groupid: string) => {
     onDescription,
   }
 }
-
 
 export const useGroupList = (query: string) => {
   const { data } = useQuery({

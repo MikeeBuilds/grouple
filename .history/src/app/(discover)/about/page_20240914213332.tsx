@@ -1,15 +1,13 @@
-import React from 'react'
+import React from "react"
 
 type Props = {
-    params: {
-        groupid: string
-    }
+  params: {
+    groupid: string
+  }
 }
 
-const Page = ({params}: Props) => {
-  return (
-    <div>Page</div>
-  )
+const Page = ({ params }: Props) => {
+  return <div>Page</div>
 }
 
 export default Page

@@ -1,32 +1,30 @@
-import { onGetGroupInfo } from '@/actions/channels'
-import { onGetActiveSubscription } from '@/actions/payments'
-import { QueryClient } from '@tanstack/react-query'
-import React from 'react'
+import { onGetGroupInfo } from "@/actions/channels"
+import { onGetActiveSubscription } from "@/actions/payments"
+import { QueryClient } from "@tanstack/react-query"
+import React from "react"
 
 type Props = {
-    params: {
-        groupid: string
-    }
+  params: {
+    groupid: string
+  }
 }
 
-const Page = async ({params}: Props) => {
-    const query = new QueryClient()
+const Page = async ({ params }: Props) => {
+  const query = new QueryClient()
 
-    await query.prefetchQuery({
-        queryKey: ["about-group-info"],
-        queryFn: () => onGetGroupInfo(params.groupid),
-    })
+  await query.prefetchQuery({
+    queryKey: ["about-group-info"],
+    queryFn: () => onGetGroupInfo(params.groupid),
+  })
 
-    await query.prefetchQuery({
-        queryKey: ["active-subscription"],
-        queryFn: () => onGetActiveSubscription(params.groupid),
-    })
+  await query.prefetchQuery({
+    queryKey: ["active-subscription"],
+    queryFn: () => onGetActiveSubscription(params.groupid),
+  })
 
-    const userid = await onAuthenticatedUser()
+  const userid = await onAuthenticatedUser()
 
-  return (
-    <div>Page</div>
-  )
+  return <div>Page</div>
 }
 
 export default Page

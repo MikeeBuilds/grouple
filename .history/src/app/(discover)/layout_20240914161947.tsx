@@ -1,13 +1,9 @@
-import React from 'react'
+import React from "react"
 
-type Props = {
-    
-}
+type Props = {}
 
 const DiscoverLayout = (props: Props) => {
-  return (
-    <div>DiscoverLayout</div>
-  )
+  return <div>DiscoverLayout</div>
 }
 
 export default DiscoverLayout

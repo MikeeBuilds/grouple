@@ -9,7 +9,11 @@ import {
 } from "@/actions/groups"
 import { supabaseClient, validateURLString } from "@/lib/utils"
 import { onOnline } from "@/redux/slices/online-member-slice"
-import { GroupStateProps, onClearSearch, onSearch } from "@/redux/slices/search-slice"
+import {
+  GroupStateProps,
+  onClearSearch,
+  onSearch,
+} from "@/redux/slices/search-slice"
 import { AppDispatch } from "@/redux/store"
 import { useMutation, useQuery } from "@tanstack/react-query"
 import { useEffect, useLayoutEffect, useRef, useState } from "react"
@@ -22,7 +26,10 @@ import { GroupSettingsSchema } from "@/components/forms/group-settings/schema"
 import { toast } from "sonner"
 import { upload } from "@/lib/uploadcare"
 import { useRouter } from "next/navigation"
-import { onClearList, onInfiniteScroll } from "@/redux/slices/infinite-scroll-slice"
+import {
+  onClearList,
+  onInfiniteScroll,
+} from "@/redux/slices/infinite-scroll-slice"
 import { UpdateGallerySchema } from "@/components/forms/media-gallery/schema"
 
 export const useGroupChatOnline = (userid: string) => {
@@ -267,8 +274,6 @@ export const useGroupSettings = (groupid: string) => {
   }
 }
 
-
-
 export const useGroupList = (query: string) => {
   const { data } = useQuery({
     queryKey: [query],
@@ -437,4 +442,3 @@ export const useMediaGallery = (groupid: string) => {
     isPending,
   }
 }
-
