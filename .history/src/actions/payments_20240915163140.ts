@@ -89,7 +89,8 @@ export const onGetGroupSubscriptionPaymentIntent = async (groupid: string) => {
         automatic_payment_methods: {
           enabled: true,
         },
-      })
+      }
+    )
 
       if (paymentIntent) {
         return { secret: paymentIntent.client_secret }

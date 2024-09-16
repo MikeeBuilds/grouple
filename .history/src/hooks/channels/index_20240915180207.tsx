@@ -269,42 +269,42 @@ export const useGetPost = (postid: string) => {
   return { data }
 }
 
-// export const usePostComment = (postid: string) => {
-//   const {
-//     register,
-//     handleSubmit,
-//     reset,
-//     formState: { errors },
-//   } = useForm<z.infer<typeof CreateCommentSchema>>({
-//     resolver: zodResolver(CreateCommentSchema),
-//   })
+export const usePostComment = (postid: string) => {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<z.infer<typeof CreateCommentSchema>>({
+    resolver: zodResolver(CreateCommentSchema),
+  })
 
-//   const client = useQueryClient()
+  const client = useQueryClient()
 
-//   const { mutate, variables, isPending } = useMutation({
-//     mutationFn: (data: { content: string; commentid: string }) =>
-//       onCreateNewComment(postid, data.content, data.commentid),
-//     onMutate: () => reset(),
-//     onSuccess: (data) =>
-//       toast(data?.status === 200 ? "Success" : "Error", {
-//         description: data?.message,
-//       }),
-//     onSettled: async () => {
-//       return await client.invalidateQueries({
-//         queryKey: ["post-comments"],
-//       })
-//     },
-//   })
+  const { mutate, variables, isPending } = useMutation({
+    mutationFn: (data: { content: string; commentid: string }) =>
+      onCreateNewComment(postid, data.content, data.commentid),
+    onMutate: () => reset(),
+    onSuccess: (data) =>
+      toast(data?.status === 200 ? "Success" : "Error", {
+        description: data?.message,
+      }),
+    onSettled: async () => {
+      return await client.invalidateQueries({
+        queryKey: ["post-comments"],
+      })
+    },
+  })
 
-//   const onCreateComment = handleSubmit(async (values) =>
-//     mutate({
-//       content: values.comment,
-//       commentid: v4(),
-//     }),
-//   )
+  const onCreateComment = handleSubmit(async (values) =>
+    mutate({
+      content: values.comment,
+      commentid: v4(),
+    }),
+  )
 
-//   return { register, errors, onCreateComment, variables, isPending }
-// }
+  return { register, errors, onCreateComment, variables, isPending }
+}
 
 export const useComments = (postid: string) => {
   const { data } = useQuery({
